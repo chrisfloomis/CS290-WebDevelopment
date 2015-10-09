@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+ </head>
+ <body>
+	 <!------------------------- 6x6 Table -------------------------->
+	 <section>
+	 <table>
+		 <caption>Multipication Table 1-5</caption>
+		 <thead>
+			<tr>
+				<th></th>
+				<th>1</th>
+				<th>2</th>
+				<th>3</th>
+				<th>4</th>
+				<th>5</th>
+			</tr>
+      	</thead>
+		 <tbody>
+			 <tr>
+				 <th><span style="font-weight: normal;">1</span></th>
+				 <td>1</td>
+				 <td>2</td>
+				 <td>3</td>
+				 <td>4</td>
+				 <td>5</td>
+			 </tr>
+			<tr>
+				<th><span style="font-weight: normal;">2</span></th>
+				 <td>2</td>
+				 <td>4</td>
+				 <td>6</td>
+				 <td>8</td>
+				 <td>10</td>
+			 </tr>
+			 <tr>
+				 <th><span style="font-weight: normal;">3</span></th>
+				 <td>3</td>
+				 <td>6</td>
+				 <td>9</td>
+				 <td>12</td>
+				 <td>15</td>
+			 </tr>
+			 <tr>
+				 <th><span style="font-weight: normal;">4</span></th>
+				 <td>4</td>
+				 <td>8</td>
+				 <td>12</td>
+				 <td>16</td>
+				 <td>20</td>
+			 </tr>
+			 <tr>
+				 <th><span style="font-weight: normal;">5</span></th>
+				 <td>5</td>
+				 <td>10</td>
+				 <td>15</td>
+				 <td>20</td>
+				 <td>25</td>
+			 </tr>
+			 <tr>
+			 	<td colspan=2><footer>Footer 1</footer></td>
+			 	<td colspan=4><footer>Footer 2</footer></td>
+			 </tr>
+		 </tbody>
+	 </table>
+	 </section>
+	 <!------------------------- Unordered List -------------------------->
+	 <section>
+	 	<ul>
+		  <li>Octavian</li>
+		  <li>Mark Antony</li>
+		  <li>Lepidus</li>
+		</ul>
+	 </section>
+	 <!------------------------- Div Boxes -------------------------->
+	 <div class="outer-content">
+		<div class="inner-content">Here be content</div> 
+	 </div>
+	 <!------------------------- Get Form -------------------------->
+	 <section>
+	 	<form action="http://classes.engr.oregonstate.edu/eecs/winter2015/cs290-400/tools/class-content/form_tests/check_request.php" method="get">
+			<legend>Get Form</legend>
+			<p>
+				<!------------------------- Text Input -------------------------->
+			<p><label>Text here:
+            	<input type="text" name="text_input" size="30" maxlength="100">
+        	</label></p>
+			<!------------------------- Number Input -------------------------->
+			<p><label>Number here:
+            	<input type="number" name="numerical_input" size="30" maxlength="100">
+        	</label></p>
+			<!------------------------- Password Input -------------------------->
+			<p><label>Password here:
+            	<input type="password" name="password_input" size="30" maxlength="100">
+        	</label></p>
+			<!------------------------- Radio Button Input -------------------------->
+			<p>Select Between:
+		<br>
+			<label>
+				<input type="radio" name="candy" value="snickers" />Snickers</label>
+			</label>
+		 <br>
+		 	<label>
+				<input type="radio" name="candy" value="snickers" />Skittles</label>
+			</label>
+	 	<br>
+	 		<label>
+				<input type="radio" name="candy" value="snickers" />Mentos</label>
+			</label>
+		<br>
+			</p>
+			<!------------------------- Submit Button -------------------------->
+				<input type="submit" value="Submit">
+		</form>
+	 </section>
+	 <br>
+	 <!-- Post Form -->
+	 <section>
+		<form action="http://classes.engr.oregonstate.edu/eecs/winter2015/cs290-400/tools/class-content/form_tests/check_request.php" method="post">
+			<legend>Get Form</legend>
+			<p>
+				<!------------------------- Text Input -------------------------->
+			<p><label>Text here:
+            	<input type="text" name="text_input" size="30" maxlength="100">
+        	</label></p>
+			<!------------------------- Number Input -------------------------->
+			<p><label>Number here:
+            	<input type="number" name="numerical_input" size="30" maxlength="100">
+        	</label></p>
+			<!------------------------- Password Input -------------------------->
+			<p><label>Password here:
+            	<input type="password" name="password_input" size="30" maxlength="100">
+        	</label></p>
+			<!------------------------- Radio Button Input -------------------------->
+			<p>Select Between:
+		<br>
+			<label>
+				<input type="radio" name="candy" value="snickers" />Snickers</label>
+			</label>
+		 <br>
+		 	<label>
+				<input type="radio" name="candy" value="snickers" />Skittles</label>
+			</label>
+	 	<br>
+	 		<label>
+				<input type="radio" name="candy" value="snickers" />Mentos</label>
+			</label>
+		<br>
+			</p>
+			<!------------------------- Submit Button -------------------------->
+				<input type="submit" value="Submit">
+		</form>
+	 </section>
+ </body>
+</html>

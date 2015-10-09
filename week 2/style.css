@@ -1,0 +1,22 @@
+.outer-content{
+	width:75%;
+	height:50px;
+	align-content:left;
+	background-color:pink;
+	border:0px;
+	margin-top:20px;
+	position:relative;
+}
+.outer-content>.inner-content{
+	width:75%;
+	height:50%;
+	align-content: center;
+	background-color: blue;
+	border:0px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	color:white;
+	text-align: center;
+}
