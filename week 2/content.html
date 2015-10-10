@@ -13,16 +13,22 @@
 		 <thead>
 			<tr>
 				<th></th>
-				<th>1</th>
-				<th>2</th>
-				<th>3</th>
-				<th>4</th>
-				<th>5</th>
+				<th>one</th>
+				<th>two</th>
+				<th>three</th>
+				<th>four</th>
+				<th>five</th>
 			</tr>
       	</thead>
+        <tfoot>
+                <tr>
+			 	   <td class="foot" colspan=2><footer>Footer 1</footer></td>
+			 	   <td class="foot" colspan=4><footer>Footer 2</footer></td>
+                </tr>
+         </tfoot>
 		 <tbody>
 			 <tr>
-				 <th><span style="font-weight: normal;">1</span></th>
+				 <th class="first-col">one</span></th>
 				 <td>1</td>
 				 <td>2</td>
 				 <td>3</td>
@@ -30,7 +36,7 @@
 				 <td>5</td>
 			 </tr>
 			<tr>
-				<th><span style="font-weight: normal;">2</span></th>
+				<th class="first-col">two</span></th>
 				 <td>2</td>
 				 <td>4</td>
 				 <td>6</td>
@@ -38,7 +44,7 @@
 				 <td>10</td>
 			 </tr>
 			 <tr>
-				 <th><span style="font-weight: normal;">3</span></th>
+				 <th class="first-col">three</span></th>
 				 <td>3</td>
 				 <td>6</td>
 				 <td>9</td>
@@ -46,7 +52,7 @@
 				 <td>15</td>
 			 </tr>
 			 <tr>
-				 <th><span style="font-weight: normal;">4</span></th>
+				 <th class="first-col">four</span></th>
 				 <td>4</td>
 				 <td>8</td>
 				 <td>12</td>
@@ -54,16 +60,12 @@
 				 <td>20</td>
 			 </tr>
 			 <tr>
-				 <th><span style="font-weight: normal;">5</span></th>
+				 <th class="first-col">five</span></th>
 				 <td>5</td>
 				 <td>10</td>
 				 <td>15</td>
 				 <td>20</td>
 				 <td>25</td>
-			 </tr>
-			 <tr>
-			 	<td colspan=2><footer>Footer 1</footer></td>
-			 	<td colspan=4><footer>Footer 2</footer></td>
 			 </tr>
 		 </tbody>
 	 </table>
@@ -71,9 +73,9 @@
 	 <!------------------------- Unordered List -------------------------->
 	 <section>
 	 	<ul>
-		  <li>Octavian</li>
-		  <li>Mark Antony</li>
-		  <li>Lepidus</li>
+		  <li>Gaius Octavius</li>
+		  <li>Marcus Antonius</li>
+		  <li>Marcus Aemilius Lepidus</li>
 		</ul>
 	 </section>
 	 <!------------------------- Div Boxes -------------------------->
@@ -82,9 +84,8 @@
 	 </div>
 	 <!------------------------- Get Form -------------------------->
 	 <section>
-	 	<form action="http://classes.engr.oregonstate.edu/eecs/winter2015/cs290-400/tools/class-content/form_tests/check_request.php" method="get">
+	 	<form name="get-form" action="http://classes.engr.oregonstate.edu/eecs/winter2015/cs290-400/tools/class-content/form_tests/check_request.php" method="get">
 			<legend>Get Form</legend>
-			<p>
 				<!------------------------- Text Input -------------------------->
 			<p><label>Text here:
             	<input type="text" name="text_input" size="30" maxlength="100">
@@ -117,12 +118,10 @@
 				<input type="submit" value="Submit">
 		</form>
 	 </section>
-	 <br>
 	 <!-- Post Form -->
 	 <section>
-		<form action="http://classes.engr.oregonstate.edu/eecs/winter2015/cs290-400/tools/class-content/form_tests/check_request.php" method="post">
+		<form name="post-form" action="http://classes.engr.oregonstate.edu/eecs/winter2015/cs290-400/tools/class-content/form_tests/check_request.php" method="post">
 			<legend>Get Form</legend>
-			<p>
 				<!------------------------- Text Input -------------------------->
 			<p><label>Text here:
             	<input type="text" name="text_input" size="30" maxlength="100">
