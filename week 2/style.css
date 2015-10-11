@@ -1,34 +1,43 @@
-table{
+table{/*table border*/
     border: solid 3px;
     border-color: darkgray;
     border-collapse: separate;
     padding:3px;
 }
 
-th{
+/*EC - make the non-header rows alternate colors*/
+tr:nth-of-type(2n+1){color:blue;}
+tr:nth-of-type(2n){color: red;}
+
+th{/*table header cells made black*/
+	color: black;
     border: solid 3px;
     padding:10px;
     border-color: forestgreen;
 }
 
-td{
+td{/*table data cells*/
     border: solid 1px;
     padding:10px;
 }
 
-td:nth-of-type(2n+1){color:blue;}
-td:nth-of-type(2n){color: red;}
+/*The EC instructions stated, "Make the non-header rows alternate colors," which I have done above.
+Looking at the example provided I originally thought it was by column, which I accomplished with this commented out code.*/
 
-td.foot{
+/*alternate the colors of the text in data cells by column
+td:nth-of-type(2n+1){color:blue;}
+td:nth-of-type(2n){color: red;}*/
+
+td.foot{/*makes sure the data cells used in the footer are not affected by above color change*/
     color:black;
 }
 
-.first-col{
+.first-col{/*this makes the first coloumn (table header cells) italic and not bold*/
     font-weight: normal;
     font-style: italic;
 }
 
-.outer-content{
+.outer-content{/*this is the outter pink box*/
 	width:75%;
 	height:100px;
 	align-content:left;
@@ -38,7 +47,7 @@ td.foot{
     position: relative;
 }
 
-.inner-content{
+.inner-content{/*this is the inner blue box*/
 	width:75%;
 	height:25%;
 	background-color: blue;
@@ -52,14 +61,14 @@ td.foot{
     bottom: 0;
 }
 
-form{
+form{/*puts a border around the forms*/
     border:solid 5px;
     padding:15px;
     border-color: lightslategray;
     margin-top:20px;
 }
 
-form>p{
+form>p{/*puts a lighter border around the different paragraphs of the form*/
     border:solid 3px;
     border-color: lightgray;
     padding:5px;
