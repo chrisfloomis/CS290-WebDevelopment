@@ -14,6 +14,11 @@ app.get('/other-page',function(req,res){
   res.send('Welcome to the other page!');
 });
 
+app.get('/math-random',function(req,res){
+  res.type('text/plain');
+  res.send(Math.random());
+});
+
 app.use(function(req,res){
   res.type('text/plain');
   res.status(404);
