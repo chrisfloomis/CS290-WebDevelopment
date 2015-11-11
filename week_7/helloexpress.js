@@ -16,7 +16,8 @@ app.get('/other-page',function(req,res){
 
 app.get('/math-random',function(req,res){
   res.type('text/plain');
-  res.send('Math.random()');
+  var rando = Math.random();
+  res.send(rando);
 });
 
 app.use(function(req,res){
