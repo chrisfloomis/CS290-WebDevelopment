@@ -37,6 +37,7 @@ app.post('/request', function(req,res){
   console.log(qParams);
   console.log(req.body);
   var context = {};
+  context.reqType = "POST";
   context.dataList = qParams;
   res.render('list', context);
 });
@@ -47,6 +48,7 @@ app.get('/request',function(req,res){
     qParams.push({'name':p,'value':req.query[p]})
   }
   var context = {};
+  context.reqType = "GET";
   context.dataList = qParams;
   res.render('list', context);
 });
