@@ -32,7 +32,7 @@ app.get('/math-random',function(req,res){
 app.post('/request', function(req,res){
   var qGetParams = [];
   for (var p in req.query){
-    qGetParamsParams.push({'name':p,'value':req.query[p]})
+    qGetParams.push({'name':p,'value':req.query[p]})
   }
   var qPostParams = [];
   for (var p in req.body){
