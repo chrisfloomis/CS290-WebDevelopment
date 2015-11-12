@@ -18,10 +18,11 @@ app.get('/other-page',function(req,res){
 function randNum(){
 	var display = {};
 	display.rando = Math.random();
+	return display;
 }
 
 app.get('/math-random',function(req,res){
-  res.render('random');
+  res.render('random',randNum());
 });
 
 app.use(function(req,res){
