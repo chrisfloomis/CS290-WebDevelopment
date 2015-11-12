@@ -30,15 +30,19 @@ app.get('/math-random',function(req,res){
 });
 
 app.post('/request', function(req,res){
-  var qParams = [];
-  for (var p in req.body){
-    qParams.push({'name':p,'value':req.body[p]})
+  var qGetParams = [];
+  for (var p in req.query){
+    qGetParamsParams.push({'name':p,'value':req.query[p]})
   }
-  console.log(qParams);
+  var qPostParams = [];
+  for (var p in req.body){
+    qPostParams.push({'name':p,'value':req.body[p]})
+  }
+  console.log(qPostParams);
   console.log(req.body);
   var context = {};
   context.reqType = "POST";
-  context.dataList = qParams;
+  context.dataList = qPostParams+qGetParams;
   res.render('list', context);
 });
 
