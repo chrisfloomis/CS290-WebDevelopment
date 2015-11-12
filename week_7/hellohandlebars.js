@@ -15,8 +15,13 @@ app.get('/other-page',function(req,res){
   res.render('other-page');
 });
 
+function randNum(){
+	var display = {};
+	display.rando = Math.random();
+}
+
 app.get('/math-random',function(req,res){
-  res.render(String(Math.random()));
+  res.render('random');
 });
 
 app.use(function(req,res){
