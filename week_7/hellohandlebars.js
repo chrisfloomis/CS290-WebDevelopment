@@ -25,6 +25,16 @@ app.get('/math-random',function(req,res){
   res.render('random',randNum());
 });
 
+app.get('/get',function(req,res){
+  var qParams = [];
+  for (var p in req.query){
+    qParams.push({'name':p,'value':req.query[p]})
+  }
+  var context = {};
+  context.dataList = qParams;
+  res.render('list', context);
+});
+
 app.use(function(req,res){
   res.status(404);
   res.render('404');
