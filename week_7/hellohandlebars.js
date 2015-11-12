@@ -2,6 +2,10 @@ var express = require('express');
 
 var app = express();
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
+var bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
@@ -25,7 +29,19 @@ app.get('/math-random',function(req,res){
   res.render('random',randNum());
 });
 
-app.get('/get',function(req,res){
+app.post('/request', function(req,res){
+  var qParams = [];
+  for (var p in req.body){
+    qParams.push({'name':p,'value':req.body[p]})
+  }
+  console.log(qParams);
+  console.log(req.body);
+  var context = {};
+  context.dataList = qParams;
+  res.render('list', context);
+});
+
+app.get('/request',function(req,res){
   var qParams = [];
   for (var p in req.query){
     qParams.push({'name':p,'value':req.query[p]})
