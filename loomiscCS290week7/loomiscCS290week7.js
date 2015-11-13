@@ -15,8 +15,8 @@ app.set('port', 3000);
 
 app.post('/', function(req,res){
   var qParams = [];
-  for (var p in req.query){
-    qParams.push({'name':p,'value':req.query[p],'reqType':"GET"})
+  for (var x in req.query){
+    qParams.push({'name':x,'value':req.query[x],'reqType':"GET"})
   }
   for (var n in req.body){
     qParams.push({'name':n,'value':req.body[n],'reqType':"POST"})
