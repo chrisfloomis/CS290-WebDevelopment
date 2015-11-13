@@ -18,8 +18,8 @@ app.post('/', function(req,res){
   for (var p in req.query){
     qParams.push({'name':p,'value':req.query[p],'reqType':"GET"})
   }
-  for (var p in req.body){
-    qParams.push({'name':p,'value':req.body[p],'reqType':"POST"})
+  for (var n in req.body){
+    qParams.push({'name':n,'value':req.body[n],'reqType':"POST"})
   }
   console.log(qParams);
   console.log(req.body);
