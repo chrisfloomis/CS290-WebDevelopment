@@ -1,3 +1,7 @@
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="loomiscCS290week7.css" type="text/css">
+</head>
 <h1>You sent the following data in a {{reqType}} request:</h1>
 <table>
 	<tr>
@@ -7,9 +11,9 @@
 	</tr>
   {{#each dataList}}
 	<tr>
-		<td id={{this.reqType}}>{{this.name}}</td>
-		<td id={{this.reqType}}>{{this.value}}</td>
-		<td id={{this.reqType}}>{{this.reqType}}</td>
+		<td class={{this.reqType}}>{{this.name}}</td>
+		<td class={{this.reqType}}>{{this.value}}</td>
+		<td class={{this.reqType}}>{{this.reqType}}</td>
 	</tr>
   {{/each}}
 </table>

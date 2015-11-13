@@ -5,13 +5,13 @@ table{/*table border*/
     padding:3px;
 }
 
-#GET{/*table data cells*/
+.GET{/*table data cells*/
     border: solid 1px;
     padding:10px;
 	background-color:lightgreen
 }
 
-#POST{/*table data cells*/
+.POST{/*table data cells*/
     border: solid 1px;
     padding:10px;
 	background-color:lavender
