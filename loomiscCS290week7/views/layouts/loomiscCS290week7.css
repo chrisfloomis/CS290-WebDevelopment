@@ -1,0 +1,18 @@
+table{/*table border*/
+    border: solid 3px;
+    border-color: darkgray;
+    border-collapse: separate;
+    padding:3px;
+}
+
+.GET{/*table data cells*/
+    border: solid 1px;
+    padding:10px;
+	background-color:lightgreen
+}
+
+.POST{/*table data cells*/
+    border: solid 1px;
+    padding:10px;
+	background-color:lavender
+}
