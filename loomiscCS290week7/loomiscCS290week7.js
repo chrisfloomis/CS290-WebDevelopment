@@ -13,8 +13,10 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('port', 3000);
 
+//need to try to use post first, otherwise the get would work everytime and post body would never be checked
 app.post('/', function(req,res){
   var qParams = [];
+	//said to check for query in the URL first, a bit of a mislabel w/ "GET"
   for (var p in req.query){
     qParams.push({'name':p,'value':req.query[p],'reqType':"GET"});
   }
@@ -28,7 +30,7 @@ app.post('/', function(req,res){
   context.dataList = qParams;
   res.render('table', context);
 });
-
+/*so if there is no body and it is not a post
 app.get('/',function(req,res){
   var qParams = [];
   for (var p in req.query){
@@ -38,7 +40,7 @@ app.get('/',function(req,res){
   context.reqType = "GET";
   context.dataList = qParams;
   res.render('table', context);
-});
+});*/
 
 app.use(function(req,res){
   res.status(404);
