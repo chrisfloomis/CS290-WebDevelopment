@@ -12,17 +12,8 @@ app.use(express.static('public'));
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('port', 3000);
-app.get('/',function(req,res){
-  var qParams = [];
-  for (var p in req.query){
-    qParams.push({'name':p,'value':req.query[p],'reqType':"GET"})
-  }
-  var context = {};
-  context.reqType = "GET";
-  context.dataList = qParams;
-  res.render('table', context);
-});
-//need to try to use POST first, otherwise the GET would work everytime and post body would never be checked
+
+//I prefer to try to use POST first, though I tested the GET first and it still caught POST
 app.post('/', function(req,res){
   var qParams = [];
 	//said to check for query in the URL first, a bit of a mislabel w/ "GET"
@@ -39,8 +30,17 @@ app.post('/', function(req,res){
   context.dataList = qParams;
   res.render('table', context);
 });
-//so if there is no body, it is not a post, and defaults here as a GET
-
+//this is for the GET
+app.get('/',function(req,res){
+  var qParams = [];
+  for (var p in req.query){
+    qParams.push({'name':p,'value':req.query[p],'reqType':"GET"})
+  }
+  var context = {};
+  context.reqType = "GET";
+  context.dataList = qParams;
+  res.render('table', context);
+});
 
 app.use(function(req,res){
   res.status(404);
