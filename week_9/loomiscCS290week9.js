@@ -16,12 +16,17 @@ var mysql = require('./mysqlpool.js');
 });*/
 
 app.get('/',function(req,res,next){
-  var context = {};
-  mysql.pool.query('SELECT * FROM student', function(err, rows, fields){
-    if(err){
-      next(err);
-      return;
-    }
+	var context = {};
+	mysql.pool.query('CREATE TABLE IF NOT EXISTS todo(id INT PRIMARY KEY AUTO_INCREMENT,name VARCHAR(255) NOT NULL,done BOOLEAN,due DATE);', function(err, rows, fields){
+    	if(err){
+			next(err);
+			return;
+		}
+	mysql.pool.query('SELECT * FROM todo', function(err, rows, fields){
+		if(err){
+			next(err);
+			return;
+		}
     context.results = JSON.stringify(rows);
     res.render('home', context);
   });
