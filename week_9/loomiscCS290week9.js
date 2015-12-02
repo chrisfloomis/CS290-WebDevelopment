@@ -21,7 +21,7 @@ app.get('/',function(req,res,next){
     	if(err){
 			next(err);
 			return;
-		}
+		}});
 	mysql.pool.query('SELECT * FROM todo', function(err, rows, fields){
 		if(err){
 			next(err);
