@@ -7,13 +7,13 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('port', 3000);
 
-var mysql = require('mysql');
-var pool = mysql.createPool({
+var mysql = require('./mysqlpool.js');
+/*var pool = mysql.createPool({
   host  : 'localhost',
   user  : 'student',
   password: 'default',
   database: 'student'
-});
+});*/
 
 app.get('/',function(req,res,next){
   var context = {};
