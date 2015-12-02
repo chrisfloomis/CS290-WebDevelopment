@@ -17,7 +17,7 @@ var mysql = require('./mysqlpool.js');
 
 app.get('/',function(req,res,next){
 	var context = {};
-	mysql.pool.query('CREATE TABLE IF NOT EXISTS todo(id INT PRIMARY KEY AUTO_INCREMENT,name VARCHAR(255) NOT NULL,done BOOLEAN,due DATE);', function(err, rows, fields){
+	mysql.pool.query('CREATE TABLE IF NOT EXISTS todo(id INT PRIMARY KEY AUTO_INCREMENT,name VARCHAR(255) NOT NULL,done BOOLEAN,due DATE)', function(err, rows, fields){
     	if(err){
 			next(err);
 			return;
