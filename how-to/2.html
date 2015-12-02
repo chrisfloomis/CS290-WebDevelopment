@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>How To Open Weather Map Forecast</title>
+		<link rel="stylesheet" href="style.css" type="text/css">
+	</head>
+	<body>
+		<pre><a href="1.html">Get your API code</a>	<b>Make the Call</b>	<a href="3.html">Everything But the Weather</a>	<a href="4.html">The Forecast</a>	<a href="5.html">Pulling it Together</a></pre>
+		<h1>2 - Make the Call</h1>
+		<h6>by Chris Loomis</h6>
+		<p>
+			So you have your API Key and are ready to make the call.  So far the call should look like this
+			<code>http://api.openweathermap.org/data/2.5/forecast/daily?appid={APIKEY}</code>
+			Remember to replace {APIKEY} with your brand new API Key!
+		</p>
+		<p>
+			Of note is the end of the URL before your API Key.  <code>/forecast/daily</code> is what we are going to use to
+			retrieve the daily forecast, but there are plenty of calls that can be made to get different types of info.
+			More info on those here: <a href="http://openweathermap.org/api">http://openweathermap.org/api</a>
+		</p>
+		<p>
+			So back on topic, we do not have enough to make a call as Open Weather Map does not know <i>where</i> we 
+			are forecasting.  There are a few options on how to tell them where.  For this How To I will be using
+			<code>q=oakland</code> which will retrieve us info for Oakland, CA, USA.
+		</p>
+		<p>
+			The <code>q</code> stands for query and <code>oakland</code> will default to Oakland, CA, but what if we
+			needed to forecast for Oakland, MO?  If you add the state to the end it will work, so <code>q=oakland,mo</code>
+			will return the forecast for Oakland, MO.  However this is still not the most precise and Open Weather Map
+			Actually recommends using the city's ID.
+		</p>
+		<p>
+			To use the city ID, you will replace <code>q=oakland</code> with <code>id=5378538</code>. How did I get the id?
+			I made the following call using the API, and the JSON object returned happens to have the code.
+			<div>
+				<code>http://api.openweathermap.org/data/2.5/forecast/daily?appid={APIKEY}&q=oakland</code>
+			</div>
+		</p>
+		<p>
+			This is not helpful for the beginner however.  Open Weather Map suggests downloading their list of cities and ids from here
+			<a href="http://bulk.openweathermap.org/sample/city.list.us.json.gz">http://bulk.openweathermap.org/sample/city.list.us.json.gz</a>.
+			This is a long text file with the city id's, city names, country, and coordinates in the form of longitude and latitude.
+			I do not find this too helpful, as if you want Oakland, MO the only way to confirm you have the correct Oakland is by the coords.
+		</p>
+		<p>
+			So whether you know the coords or google for them, This is the last way you can make a call to Open Weather Map.
+			To do so, replace <code>q=oakland</code> or <code>id=5378538</code> with <code>lon=-122.270798&lat=37.804371</code>.
+			You will want to be that precise with them, as the slightest deviation will get you a neighboring town.  
+		</p>
+		<p>
+			Ultimately, the easiest way is to just use the city name with state/province and country.  Here it is in it's final form
+			with the other two methods following.
+			<div>
+				<code>http://api.openweathermap.org/data/2.5/forecast/daily?appid={APIKEY}&q=oakland,ca,us</code><br>
+				<code>http://api.openweathermap.org/data/2.5/forecast/daily?appid={APIKEY}&id=5378538</code><br>
+				<code>http://api.openweathermap.org/data/2.5/forecast/daily?appid={APIKEY}&lon=-122.270798&lat=37.804371</code>
+			</div>
+		</p>
+		<p>
+			All 3 of the examples above will return the 7 day forecast for Oakland, CA, but Open Weather Map can return up to 16 days!
+			To return all 16 you can simply add a count with <code>cnt=16</code>, or replace 16 with any number between 1 and 16.  If
+			a number is entered not in range it will default back to 7.
+		</p>
+		<p>
+			If you looked through the block of returned JSON you probably didn't understand the temperatures as there are no units attached.
+			The default is Kelvin for temperature and meters/second for wind speed.  This means to most the info is meaningless as few
+			regularly use Kelvins.  Thankfully we can just add <code>units=metric</code> for Celsius, or if you're American 
+			<code>units=imperial</code> for Fahrenheit and Miles per Hour.  Being American myself, I will be using imperial, so our final
+			request for this How To is as follows:
+			<div>
+				<code>http://api.openweathermap.org/data/2.5/forecast/daily?appid={APIKEY}&q=oakland,ca,us&cnt=7&units=imperial</code><br>
+				<i>Note: I am making a 7 day forecast and as that is the default I did not need to add the count.</i>
+			</div>
+		</p>
+		<p>
+			With the call out of the way, we can finally get to dissecting the information returned!
+		</p>
+		<pre><a href="1.html">Previous</a>			<a href="3.html">Next</a></pre>
+	</body>
+</html>

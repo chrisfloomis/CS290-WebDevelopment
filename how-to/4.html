@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>How To Open Weather Map Forecast</title>
+		<link rel="stylesheet" href="style.css" type="text/css">
+	</head>
+	<body>
+		<pre><a href="1.html">Get your API code</a>	<a href="2.html">Make the Call</a>	<a href="3.html">Everything But the Weather</a>	<b>The Forecast</b>	<a href="5.html">Pulling it Together</a></pre>
+		<h1>4 - The Forecast</h1>
+		<h6>by Chris Loomis</h6>
+		<p>
+			Finally, lets actually talk about the weather!
+		</p>
+		<p>
+			The forecast is returned in an array under the <code>response.list</code>.  This means that
+			for tomorrow's forecast you will access the data with <code>response.list[0]</code>, the
+			day after is <code>response.list[1]</code>, and so on.
+		</p>
+		<p>
+			So lets look at the info returned for each day, starting right where the last list left off, here are the parts of
+		</p>
+		<div>
+			<b>response.list[x]</b> <i>let x stand in for the number discussed earlier.</i>
+			<ul>
+				<li><b>response.list[x].dt</b> - this is the time the data was forecasted, in milliseconds from the epoch</li>
+				<li><b>response.list[x].temp</b> - this is a JSON of forecasted temperatures at different times of the day</li>
+				<ul>
+					<li><b>response.list[x].temp.day</b> - daytime temperature</li>
+					<li><b>response.list[x].temp.min</b> - daily minimum temperature</li>
+					<li><b>response.list[x].temp.max</b> - daily maximum temperature</li>
+					<li><b>response.list[x].temp.night</b> - nighttime temperature</li>
+					<li><b>response.list[x].temp.eve</b> - evening temperature</li>
+					<li><b>response.list[x].temp.morn</b> - morning temperature</li>
+				</ul>
+				<li><b>response.list[x].pressure</b> - atmospheric pressure</li>
+				<li><b>response.list[x].humidity</b> - humidity percentage</li>
+				<li><b>response.list[x].weather</b> - this is an array of JSON with*</li>
+				<ul>
+					<li><b>response.list[x].weather[0].id</b> - weather ID</li>
+					<li><b>response.list[x].weather[0].main</b> - weather group (ie-Rain)</li>
+					<li><b>response.list[x].weather[0].description</b> - sub type of weather (ie-Light Rain)</li>
+					<li><b>response.list[x].weather[0].icon</b> - the name of a png you can access for a picture</li>
+				</ul>
+				<li><b>response.list[x].speed</b> - wind speed</li>
+				<li><b>response.list[x].deg</b> - wind direction</li>
+				<li><b>response.list[x].clouds</b> - cloud cover**</li>
+			</ul>
+		</div>
+		<p>
+			Firstly, the * next to <code>response.list[x].weather</code> is because it is an array.  I have made calls
+			for several different cities around the world, and also other types of calls such as a 5 day / 3 hour
+			forecast, and I cannot figure out why this is an array.  Everytime it comes back with just a single
+			JSON object in it, and so to access this JSON object for data it will always be <code>weather[0]</code>.
+		</p>
+		<p>
+			The ** next to <code>response.list[x].clouds</code> is due to there being another value if there are any clouds.
+			Clouds itself is a percentage of cloud cover.  If they are calling for perciptation such as rain or snow, there will be
+			another key:value which can be accessed by <code>response.list[x].rain</code> or <code>response.list[x].snow</code>
+			respectively.  Some logic will be required if you wish to access this data if it is available.
+		</p>
+		<p>
+			The last thing of note is the <code>response.list[x].weather[0].icon</code> which corresponds to a png you may
+			access from Open Weather Map at http://openweathermap.org/img/w/{icon}.png.  You can view the different icons and
+			weather codes here <a href="http://openweathermap.org/weather-conditions">http://openweathermap.org/weather-conditions</a>.
+		</p>
+		<p>
+			In the next section I will show how I pulled all this together utilizing node.js, express, and handlebars to display a forecast.
+		</p>
+		<pre><a href="3.html">Previous</a>			<a href="5.html">Next</a></pre>
+	</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>How To Open Weather Map Forecast</title>
+		<link rel="stylesheet" href="style.css" type="text/css">
+	</head>
+	<body>
+		<pre><b>Get your API code</b>	<a href="2.html">Make the Call</a>	<a href="3.html">Everything But the Weather</a>	<a href="4.html">The Forecast</a>	<a href="5.html">Pulling it Together</a></pre>
+		<h1>1 - Get your API code</h1>
+		<h6>by Chris Loomis</h6>
+		<p>
+			Welcome to my guide on using Open Weather Map to create a forecast.
+			I plan to take you from this returned text
+		</p>
+			<div><pre>			{"city":{"id":5378538,"name":"Oakland","coord":{"lon":-122.270798,"lat":37.804371},
+			"country":"US","population":0},"cod":"200","message":0.0078,"cnt":10,"list":[{"dt":1448564400,
+			"temp":{"day":54.23,"min":42.04,"max":60.35,"night":42.04,"eve":59,"morn":43.72},"pressure":1026.22,
+			"humidity":56,"weather":[{"id":800,"main":"Clear","description":"sky is clear","icon":"01d"}],
+			"speed":10.41,"deg":355,"clouds":0},{"dt":1448650800,"temp":{"day":50.18,"min":31.44,"max":58.96,
+			"night":40.91,"eve":57.78,"morn":35.4},"pressure":1027.08,"humidity":53,
+			"weather":[{"id":800,"main":"Clear","description":"sky is clear","icon":"01d"}],"speed":4.13,
+			"deg":11,"clouds":0},{"dt":1448737200,"temp":{"day":43.34,"min":28.47,"max":52.34,
+			"night":28.47,"eve":50.23,"morn":32.52},"pressure":1025.64,"humidity":50,
+			"weather":[{"id":800,"main":"Clear","description":"sky is clear","icon":"01d"}],"speed":5.14,
+			"deg":0,"clouds":0},{"dt":1448823600,"temp":{"day":42.6,"min":21.33,"max":50.34,
+			"night":26.06,"eve":49.08,"morn":22.68},"pressure":1028.01,"humidity":55,
+			"weather":[{"id":800,"main":"Clear","description":"sky is clear","icon":"01d"}],"speed":4.15,
+			"deg":23,"clouds":0},{"dt":1448910000,"temp":{"day":43.84,"min":30.97,"max":46.29,
+			"night":41.22,"eve":46.29,"morn":30.97},"pressure":1018.62,"humidity":0,
+			"weather":[{"id":501,"main":"Rain","description":"moderate rain","icon":"10d"}],"speed":3.84,
+			"deg":94,"clouds":70,"rain":6.77},{"dt":1448996400,"temp":{"day":43.68,"min":34.61,"max":50.31,
+			"night":34.61,"eve":50.31,"morn":40.3},"pressure":1021.26,"humidity":0,
+			"weather":[{"id":500,"main":"Rain","description":"light rain","icon":"10d"}],"speed":3.09,
+			"deg":18,"clouds":91,"rain":1.74},{"dt":1449082800,"temp":{"day":47.19,"min":36.68,"max":54.77,
+			"night":38.66,"eve":54.77,"morn":36.68},"pressure":1021.65,"humidity":0,
+			"weather":[{"id":500,"main":"Rain","description":"light rain","icon":"10d"}],"speed":1.73,
+			"deg":40,"clouds":1,"rain":0.67},{"dt":1449169200,"temp":{"day":47.77,"min":37.51,"max":52.86,
+			"night":47.57,"eve":52.86,"morn":37.51},"pressure":1016.33,"humidity":0,
+			"weather":[{"id":500,"main":"Rain","description":"light rain","icon":"10d"}],"speed":1.68,
+			"deg":87,"clouds":69,"rain":1.78},{"dt":1449255600,"temp":{"day":53.85,"min":45.23,"max":58.78,
+			"night":45.23,"eve":58.78,"morn":51.26},"pressure":1017.94,"humidity":0,
+			"weather":[{"id":502,"main":"Rain","description":"heavy intensity rain","icon":"10d"}],"speed":4.64,
+			"deg":163,"clouds":62,"rain":15.71},{"dt":1449342000,"temp":{"day":50.34,"min":39.42,"max":56.14,
+			"night":39.42,"eve":56.14,"morn":40.35},"pressure":1024.02,"humidity":0,
+			"weather":[{"id":500,"main":"Rain","description":"light rain","icon":"10d"}],"speed":3.15,
+			"deg":13,"clouds":18}]}
+			</pre></div>
+		<p>
+			to this formatted weather forecast
+		</p>
+		<div>
+		<img src="forecast.JPG">
+		</div>
+		<p>
+			But before we can even get started, you will need to register for an API code which you can sign up for free
+			here: <a href="http://home.openweathermap.org/users/sign_up">http://home.openweathermap.org/users/sign_up</a>
+		</p>
+		<p>
+			If you followed the link you will see that it is incredibly easy to obtain your own API code by entering a username,
+			email, password, and agreeing to their terms of service.
+		</p>
+		<p>
+			In the following steps I will refer to the API Key as {APIKEY} and you should make sure to replace it with your own key.
+		</p>
+		<pre><a href="2.html">Next</a></pre>
+	</body>
+</html>

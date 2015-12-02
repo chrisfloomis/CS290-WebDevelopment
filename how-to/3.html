@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>How To Open Weather Map Forecast</title>
+		<link rel="stylesheet" href="style.css" type="text/css">
+	</head>
+	<body>
+		<pre><a href="1.html">Get your API code</a>	<a href="2.html">Make the Call</a>	<b>Everything But the Weather</b>	<a href="4.html">The Forecast</a>	<a href="5.html">Pulling it Together</a></pre>
+		<h1>3 - Everything But the Weather</h1>
+		<h6>by Chris Loomis</h6>
+		<p>
+			So you are now getting the information you want, or at the least, you are assuming that is the correct data, but what to do with it?
+			In this How To I will be using Javascript, and one way would be with an asynchronous AJAX call such as<br>
+			<div>
+			<code><pre>
+				document.getElementById("citySubmit").addEventListener("click", function(event){
+				var req = new XMLHttpRequest();
+				req.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=oakland,ca,us&appid="+apiKey+"&units=imperial", true);
+				req.addEventListener("load",function(){
+				if(req.status >= 200 && req.status < 400){
+				var response = JSON.parse(req.responseText);}
+				else{console.log("Error in network request: " + request.statusText);}});
+			</pre></code>
+			</div>
+		</p>
+		<p>
+			This will allow you to access the data with <code>response.{data name}</code> within the <code>if</code>.
+		</p>
+		<p>
+			So lets look at the info we have received.  Much of this is self explanatory.
+			<ul>
+				<li><b>response.city</b> - a JSON object for the city which contains:</li>
+				<ul>
+					<li><b>response.city.id</b> - city's ID</li>
+					<li><b>response.city.name</b> - city's name</li>
+					<li><b>response.city.coord</b> - a JSON object with:</li>
+					<ul>
+						<li><b>response.city.coord.lon</b> - city's longitude</li>
+						<li><b>response.city.coord.lat</b> - city's latitude</li>
+					</ul>
+					<li><b>response.city.country</b> - city's country</li>
+					<li><b>response.city.population</b> - city's population</li>
+				</ul>
+				<li><b>response.cod</b> - an internal parameter</li>
+				<li><b>response.message</b> - an internal parameter</li>
+				<li><b>response.cnt</b> - the number of days of the forecast</li>
+				<li><b>response.list</b> - an array of each day's foreast,<br>
+					<i>Note: This is the bulk of the information you most likely want and I will detail in the next section</i></li>
+			</ul>
+		</p>
+		<p>
+			There is not much to go over as this is all basic JSON, or JSON within JSON, and it doesn't get tricky until you get into the list.
+			Even though it is simple, there is still lots of useful data you may want to pull from such as the City's name and country.
+			So to utilize these in the above AJAX call it may look like this:<br>
+			<code><pre>
+				document.getElementById("citySubmit").addEventListener("click", function(event){
+				var req = new XMLHttpRequest();
+				req.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=oakland,ca,us&appid="+apiKey+"&units=imperial", true);
+				req.addEventListener("load",function(){
+				if(req.status >= 200 && req.status < 400){
+				var response = JSON.parse(req.responseText);
+				<b>document.getElementById("cityOut").textContent = response.city.name;
+					document.getElementById("countryOut").textContent = response.country.name;}</b>
+				else{console.log("Error in network request: " + request.statusText);}});
+			</pre></code>
+		</p>
+		<p>
+			In the next section we will go through the list, which is the actual forecast which is not as straight forward as this.
+		</p>
+		<pre><a href="2.html">Previous</a>			<a href="4.html">Next</a></pre>
+	</body>
+</html>
