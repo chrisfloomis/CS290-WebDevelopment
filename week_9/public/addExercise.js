@@ -28,7 +28,7 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 				  date: null,
 				  lbs: null};
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
-	payload.name = document.getElementById("exerciseName").value;
+	payload.exerciseName = document.getElementById("exerciseName").value;
 
 	if(document.forms["addExercise"]["reps"].value != null || document.forms["addExercise"]["reps"].value != ""){
 		payload.reps = document.getElementById("reps").value; 
