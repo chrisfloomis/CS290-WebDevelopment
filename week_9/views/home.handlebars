@@ -1,27 +1,5 @@
 <head>
-	<script>	
-		function validateDate() {
-			if(document.forms["addExercise"]["month"].value != null || document.forms["addExercise"]["month"].value != ""){
-				if(document.forms["addExercise"]["day"].value != null || document.forms["addExercise"]["day"].value != ""){
-					if(document.forms["addExercise"]["year"].value != null || document.forms["addExercise"]["year"].value != ""){
-						if(!(document.forms["addExercise"]["year"].value.length > 5)){
-							return true;
-						}
-					}
-				}
-			}
-			else if(document.forms["addExercise"]["month"].value == null || document.forms["addExercise"]["month"].value == ""){
-				if(document.forms["addExercise"]["day"].value == null || document.forms["addExercise"]["day"].value == ""){
-					if(document.forms["addExercise"]["year"].value == null || document.forms["addExercise"]["year"].value == ""){
-						return true;
-					}
-				}
-			}
-			else{
-				return false;
-			}
-		}
-	</script>
+
 </head>
 <body>
 	<h1>The Home Page</h1>
@@ -39,4 +17,5 @@
 		</form>
 	</div>
 	<p>{{results}}</p>
+<script src="loomiscCS290week9.js"></script>
 </body>

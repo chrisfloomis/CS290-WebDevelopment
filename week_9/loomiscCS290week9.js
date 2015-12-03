@@ -15,6 +15,28 @@ var mysql = require('./mysqlpool.js');
   database: 'student'
 });*/
 
+function validateDate() {
+	if(document.forms["addExercise"]["month"].value != null || document.forms["addExercise"]["month"].value != ""){
+		if(document.forms["addExercise"]["day"].value != null || document.forms["addExercise"]["day"].value != ""){
+			if(document.forms["addExercise"]["year"].value != null || document.forms["addExercise"]["year"].value != ""){
+				if(!(document.forms["addExercise"]["year"].value.length > 5)){
+					return true;
+				}
+			}
+		}
+	}
+	else if(document.forms["addExercise"]["month"].value == null || document.forms["addExercise"]["month"].value == ""){
+		if(document.forms["addExercise"]["day"].value == null || document.forms["addExercise"]["day"].value == ""){
+			if(document.forms["addExercise"]["year"].value == null || document.forms["addExercise"]["year"].value == ""){
+				return true;
+			}
+		}
+	}
+	else{
+		return false;
+	}
+}
+
 app.get('/',function(req,res,next){
 	var context = {};
 //create table if it does not exist
@@ -29,28 +51,8 @@ app.get('/',function(req,res,next){
 			next(err);
 			return;
 		}});
-	/*
-	function validateDate() {
-    	if(document.forms["addExercise"]["month"].value != null || document.forms["addExercise"]["month"].value != ""){
-			if(document.forms["addExercise"]["day"].value != null || document.forms["addExercise"]["day"].value != ""){
-				if(document.forms["addExercise"]["year"].value != null || document.forms["addExercise"]["year"].value != ""){
-					if(!(document.forms["addExercise"]["year"].value.length > 5)){
-						return true;
-					}
-				}
-			}
-		}
-		else if(document.forms["addExercise"]["month"].value == null || document.forms["addExercise"]["month"].value == ""){
-			if(document.forms["addExercise"]["day"].value == null || document.forms["addExercise"]["day"].value == ""){
-				if(document.forms["addExercise"]["year"].value == null || document.forms["addExercise"]["year"].value == ""){
-					return true;
-				}
-			}
-		}
-		else{
-			return false;
-		}
-	}*/
+	
+
 	
 //post listener for adding row
 	document.getElementById("newExerciseSubmit").addEventListener("click", function(event){/*
