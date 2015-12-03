@@ -61,14 +61,9 @@ app.get('/reset-table',function(req,res,next){
   });
 });
 
-app.post('/insert',function(req,res,next){
+app.get('/insert',function(req,res,next){
 	var context = {};
-	var exerciseName = req.body[0];
-	var reps = req.body[1];
-	var weight = req.body[2];
-	var date = req.body[3];
-	var lbs = req.body[4];
-  mysql.pool.query("INSERT INTO workouts (`name`,`reps`,`weight`,`date`,`lbs`) VALUES (?,?,?,?,?)", [exerciseName, reps, weight, date, lbs], function(err, result){
+	mysql.pool.query("INSERT INTO workouts (`name`,`reps`,`weight`,`date`,`lbs`) VALUES (?,?,?,?,?)", [req.query.exerciseName, req.query.reps, req.query.weight, req.query.date, req.query.lbs], function(err, result){
     if(err){
       next(err);
       return;
