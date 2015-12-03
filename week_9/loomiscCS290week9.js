@@ -62,8 +62,13 @@ app.get('/reset-table',function(req,res,next){
 });
 
 app.post('/insert',function(req,res,next){
-  var context = {};
-  mysql.pool.query("INSERT INTO workouts (`name`,`reps`,`weight`,`date`,`lbs`) VALUES (?,?,?,?,?)", [req.body[exerciseName], req.body[reps], req.body[weight], req.body[date], req.body[lbs]], function(err, result){
+	var context = {};
+	var exerciseName = req.body[0];
+	var reps = req.body[1];
+	var weight = req.body[2];
+	var date = req.body[3];
+	var lbs = req.body[4];
+  mysql.pool.query("INSERT INTO workouts (`name`,`reps`,`weight`,`date`,`lbs`) VALUES (?,?,?,?,?)", [exerciseName, reps, weight, date, lbs], function(err, result){
     if(err){
       next(err);
       return;
