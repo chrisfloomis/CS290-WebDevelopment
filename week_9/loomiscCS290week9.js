@@ -61,7 +61,7 @@ app.get('/reset-table',function(req,res,next){
   });
 });
 
-app.get('/insert',function(req,res,next){
+app.post('/insert',function(req,res,next){
   var context = {};
   mysql.pool.query("INSERT INTO workouts (`name`,`reps`,`weight`,`date`,`lbs`) VALUES (?,?,?,?,?)", [req.query.name, req.query.reps, req.query.weight, req.query.date, req.query.lbs], function(err, result){
     if(err){
