@@ -109,8 +109,8 @@ app.get('/',function(req,res,next){
 			}
 		});
 		req.send(JSON.stringify(payload));
-		event.preventDefault();*/
-	});
+		event.preventDefault();
+	});*/
 	
 //get table	
 	mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
