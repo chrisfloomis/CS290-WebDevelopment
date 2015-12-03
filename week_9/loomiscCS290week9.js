@@ -59,7 +59,7 @@ app.get('/',function(req,res,next){
 					  reps: null,
 					  weight: null,
 					  date: null,
-					  lbs: null};
+					  lbs: null};/*
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
 		payload.name = document.getElementById("exerciseName").value;
 		
@@ -90,7 +90,7 @@ app.get('/',function(req,res,next){
 		
 		if(document.forms["addExercise"]["month"].value == "kg"){
 			payload.lbs = 0;
-		}
+		}*/
 																					/////////////////UPDATE
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////			
 		req.open("POST", "/insert", true);
