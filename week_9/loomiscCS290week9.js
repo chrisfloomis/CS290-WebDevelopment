@@ -31,18 +31,18 @@ app.get('/',function(req,res,next){
 		}});
 	
 	function validateDate() {
-    	if(document.forms[addExercise][month].value != null || document.forms[addExercise][month].value != ""){
-			if(document.forms[addExercise][day].value != null || document.forms[addExercise][day].value != ""){
-				if(document.forms[addExercise][year].value != null || document.forms[addExercise][year].value != ""){
-					if(!(document.forms[addExercise][year].value.length > 5)){
+    	if(document.forms["addExercise"]["month"].value != null || document.forms["addExercise"]["month"].value != ""){
+			if(document.forms["addExercise"]["day"].value != null || document.forms["addExercise"]["day"].value != ""){
+				if(document.forms["addExercise"]["year"].value != null || document.forms["addExercise"]["year"].value != ""){
+					if(!(document.forms["addExercise"]["year"].value.length > 5)){
 						return true;
 					}
 				}
 			}
 		}
-		else if(document.forms[addExercise][month].value == null || document.forms[addExercise][month].value == ""){
-			if(document.forms[addExercise][day].value == null || document.forms[addExercise][day].value == ""){
-				if(document.forms[addExercise][year].value == null || document.forms[addExercise][year].value == ""){
+		else if(document.forms["addExercise"]["month"].value == null || document.forms["addExercise"]["month"].value == ""){
+			if(document.forms["addExercise"]["day"].value == null || document.forms["addExercise"]["day"].value == ""){
+				if(document.forms["addExercise"]["year"].value == null || document.forms["addExercise"]["year"].value == ""){
 					return true;
 				}
 			}
@@ -63,18 +63,18 @@ app.get('/',function(req,res,next){
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
 		payload.name = document.getElementById("exerciseName").value;
 		
-		if(document.forms[addExercise][reps].value != null || document.forms[addExercise][reps].value != ""){
+		if(document.forms["addExercise"]["reps"].value != null || document.forms["addExercise"]["reps"].value != ""){
 			payload.reps = document.getElementById("reps").value; 
 		}
 		
-		if(document.forms[addExercise][weight].value != null || document.forms[addExercise][weight].value != ""){
+		if(document.forms["addExercise"]["weight"].value != null || document.forms["addExercise"]["weight"].value != ""){
 			payload.weight = document.getElementById("weight").value; 
 		}
 		
-		if(document.forms[addExercise][month].value != null || document.forms[addExercise][month].value != ""){
-			if(document.forms[addExercise][day].value != null || document.forms[addExercise][day].value != ""){
-				if(document.forms[addExercise][year].value != null || document.forms[addExercise][year].value != ""){
-					if(!(document.forms[addExercise][year].value.length > 5)){
+		if(document.forms["addExercise"]["month"].value != null || document.forms["addExercise"]["month"].value != ""){
+			if(document.forms["addExercise"]["day"].value != null || document.forms["addExercise"]["day"].value != ""){
+				if(document.forms["addExercise"]["year"].value != null || document.forms["addExercise"]["year"].value != ""){
+					if(!(document.forms["addExercise"]["year"].value.length > 5)){
 						payload.date = document.getElementById("year").value+"-"+document.getElementById("month").value+"-"+document.getElementById("day").value;
 					}
 				}
@@ -84,11 +84,11 @@ app.get('/',function(req,res,next){
 			payload.date = null;
 		}
 		
-		if(document.forms[addExercise][month].value == "lbs"){
+		if(document.forms["addExercise"]["month"].value == "lbs"){
 			payload.lbs = 1;
 		}
 		
-		if(document.forms[addExercise][month].value == "kg"){
+		if(document.forms["addExercise"]["month"].value == "kg"){
 			payload.lbs = 0;
 		}
 																					/////////////////UPDATE
