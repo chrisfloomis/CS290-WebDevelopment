@@ -29,7 +29,7 @@ app.get('/',function(req,res,next){
 			next(err);
 			return;
 		}});
-	
+	/*
 	function validateDate() {
     	if(document.forms["addExercise"]["month"].value != null || document.forms["addExercise"]["month"].value != ""){
 			if(document.forms["addExercise"]["day"].value != null || document.forms["addExercise"]["day"].value != ""){
@@ -50,7 +50,7 @@ app.get('/',function(req,res,next){
 		else{
 			return false;
 		}
-	}
+	}*/
 	
 //post listener for adding row
 	document.getElementById("newExerciseSubmit").addEventListener("click", function(event){
