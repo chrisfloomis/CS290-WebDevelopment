@@ -80,12 +80,8 @@ app.get('/',function(req,res,next){
 				}
 			}
 		}
-		else(document.forms[addExercise][month].value == null || document.forms[addExercise][month].value == ""){
-			if(document.forms[addExercise][day].value == null || document.forms[addExercise][day].value == ""){
-				if(document.forms[addExercise][year].value == null || document.forms[addExercise][year].value == ""){
-					payload.date = null;
-				}
-			}
+		else{
+			payload.date = null;
 		}
 		
 		if(document.forms[addExercise][month].value == "lbs"){
