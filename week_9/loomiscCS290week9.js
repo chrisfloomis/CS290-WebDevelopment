@@ -107,9 +107,9 @@ app.get('/',function(req,res,next){
 			else{//error
 				console.log("Error in network request: " + request.statusText);
 			}
-		});*/
+		});
 		req.send(JSON.stringify(payload));
-		event.preventDefault();
+		event.preventDefault();*/
 	});
 	
 //get table	
