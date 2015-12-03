@@ -53,13 +53,13 @@ app.get('/',function(req,res,next){
 	}*/
 	
 //post listener for adding row
-	document.getElementById("newExerciseSubmit").addEventListener("click", function(event){
+	/*document.getElementById("newExerciseSubmit").addEventListener("click", function(event){
 		var req = new XMLHttpRequest();
 		var payload = {exerciseName: null,
 					  reps: null,
 					  weight: null,
 					  date: null,
-					  lbs: null};/*
+					  lbs: null};
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
 		payload.name = document.getElementById("exerciseName").value;
 		
@@ -90,7 +90,7 @@ app.get('/',function(req,res,next){
 		
 		if(document.forms["addExercise"]["month"].value == "kg"){
 			payload.lbs = 0;
-		}*/
+		}
 																					/////////////////UPDATE
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////			
 		req.open("POST", "/insert", true);
@@ -107,7 +107,7 @@ app.get('/',function(req,res,next){
 			else{//error
 				console.log("Error in network request: " + request.statusText);
 			}
-		});
+		});*/
 		req.send(JSON.stringify(payload));
 		event.preventDefault();
 	});
