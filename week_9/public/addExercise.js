@@ -60,7 +60,7 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 	}
 																				/////////////////UPDATE
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////			
-	req.open("POST", "/insert", true);
+	req.open("POST", "http://52.33.123.28:3000/insert", true);
 	req.setRequestHeader('Content-Type', 'application/json');
 	req.addEventListener("load",function(){
 		if(req.status >= 200 && req.status < 400){//no error so utilize data returned
