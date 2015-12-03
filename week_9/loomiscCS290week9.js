@@ -53,7 +53,7 @@ app.get('/',function(req,res,next){
 	}*/
 	
 //post listener for adding row
-	/*document.getElementById("newExerciseSubmit").addEventListener("click", function(event){
+	document.getElementById("newExerciseSubmit").addEventListener("click", function(event){/*
 		var req = new XMLHttpRequest();
 		var payload = {exerciseName: null,
 					  reps: null,
@@ -110,7 +110,7 @@ app.get('/',function(req,res,next){
 		});
 		req.send(JSON.stringify(payload));
 		event.preventDefault();
-	});*/
+	*/});
 	
 //get table	
 	mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
