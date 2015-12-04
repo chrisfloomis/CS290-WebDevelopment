@@ -20,7 +20,7 @@ var mysql = require('./mysqlpool.js');
 
 app.get('/',function(req,res,next){
 	var context = {};
-//create table if it does not exist
+/*create table if it does not exist
 	mysql.pool.query("CREATE TABLE IF NOT EXISTS workouts("+
     "id INT PRIMARY KEY AUTO_INCREMENT,"+
     "name VARCHAR(255) NOT NULL,"+
@@ -32,7 +32,7 @@ app.get('/',function(req,res,next){
 			next(err);
 			return;
 		}});	
-	
+*/	
 //get table	
 	mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
 		if(err){
@@ -41,6 +41,18 @@ app.get('/',function(req,res,next){
 		}
     context.results = JSON.stringify(rows);
     res.render('home', context);
+  });
+});
+
+app.get('/insert',function(req,res,next){
+	var context = {};
+	mysql.pool.query("INSERT INTO workouts (`name`,`reps`,`weight`,`date`,`lbs`) VALUES (?,?,?,?,?)", [req.query.exerciseName, req.query.reps, req.query.weight, req.query.date, req.query.lbs], function(err, result){
+    if(err){
+      next(err);
+      return;
+    }
+    context.results = "Inserted id " + result.insertId;
+    res.render('home',context);
   });
 });
 
@@ -58,18 +70,6 @@ app.get('/reset-table',function(req,res,next){
       context.results = "Table reset";
       res.render('home',context);
     })
-  });
-});
-
-app.get('/insert',function(req,res,next){
-	var context = {};
-	mysql.pool.query("INSERT INTO workouts (`name`,`reps`,`weight`,`date`,`lbs`) VALUES (?,?,?,?,?)", [req.query.exerciseName, req.query.reps, req.query.weight, req.query.date, req.query.lbs], function(err, result){
-    if(err){
-      next(err);
-      return;
-    }
-    context.results = "Inserted id " + result.insertId;
-    res.render('home',context);
   });
 });
 
