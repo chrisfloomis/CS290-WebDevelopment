@@ -27,7 +27,7 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 		var exerciseName = document.getElementById("reps").value;
 		var exerciseName = document.getElementById("weight").value;
 		var exerciseName = document.getElementById("exerciseName").value;*/
-		req.open("GET", "http://52.33.123.28:3000/insert?exerciseName="+document.getElementById("exerciseName").value
+		req.open("GET", "http://52.33.123.28:3000/"+document.getElementById("action").value+"?exerciseName="+document.getElementById("exerciseName").value
 				 +"&reps="+document.getElementById("reps").value
 				 +"&weight="+document.getElementById("weight").value
 				 +"&date="+document.getElementById("year").value

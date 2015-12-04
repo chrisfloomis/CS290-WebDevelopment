@@ -8,6 +8,7 @@
 		<form name="addExercise" onsubmit="return validateDate()">
 			<fieldset>
 				<legend>Add Exercise</legend>
+				<input id="action" type="hidden" name="action">
 				<p>Exercise Name: <input id="exerciseName" type="text" name="exerciseName" required></p>
 				<p>Repetitions: <input id="reps" type="number" name="reps" min="1"></p>
 				<p>Weight: <input id="weight" type="number" name="weight" min="1"><input type="radio" name="lbskg" value="lbs">lbs. <input type="radio" name="lbskg" value="kg">kg.</p>
