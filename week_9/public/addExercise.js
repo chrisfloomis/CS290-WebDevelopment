@@ -22,7 +22,7 @@ function validateDate() {
 
 document.getElementById("newExerciseSubmit").addEventListener("click", function(event){
 		var req = new XMLHttpRequest();
-		var q = "http://52.33.123.28:3000\/insert?exerciseName=";
+		var q = "http://52.33.123.28:3000/insert?exerciseName=";
 		q += document.getElementById("exerciseName").value;
 		q += "&reps="+document.getElementById("reps").value;
 		q += "&weight="+document.getElementById("weight").value;
@@ -33,7 +33,7 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 		req.addEventListener("load",function(){
 			if(req.status >= 200 && req.status < 400)
 			{//no error so utilize data returned
-				req.open("GET", "http://52.33.123.28:3000/", true);
+				//req.open("GET", "http://52.33.123.28:3000/", true);
 				/*var response = JSON.parse(req.responseText);
 				document.getElementById("cityOut").textContent = response.name;
 				document.getElementById("tempOut").textContent = response.main.temp;
