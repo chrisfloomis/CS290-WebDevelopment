@@ -27,17 +27,11 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 		var exerciseName = document.getElementById("reps").value;
 		var exerciseName = document.getElementById("weight").value;
 		var exerciseName = document.getElementById("exerciseName").value;*/
-		req.open("GET", "http://52.33.123.28:3000/insert?exerciseName="+document.getElementById("exerciseName").value
-				 +"&reps="+document.getElementById("reps").value
-				 +"&weight="+document.getElementById("weight").value
-				 +"&date="+document.getElementById("year").value
-				 			+"-"+document.getElementById("month").value
-				 			+"-"+document.getElementById("day").value
-				 +"&lbs="+document.getElementById("lbs").value
-				 , true);
+		req.open("GET", "http://52.33.123.28:3000/insert?exerciseName="+document.getElementById("exerciseName").value+"&reps="+document.getElementById("reps").value+"&weight="+document.getElementById("weight").value+"&date="+document.getElementById("year").value+"-"+document.getElementById("month").value+"-"+document.getElementById("day").value+"&lbs="+document.getElementById("lbs").value+"/", true);
 		req.addEventListener("load",function(){
 			if(req.status >= 200 && req.status < 400)
 			{//no error so utilize data returned
+				req.open("GET", "http://52.33.123.28:3000/", true
 				/*var response = JSON.parse(req.responseText);
 				document.getElementById("cityOut").textContent = response.name;
 				document.getElementById("tempOut").textContent = response.main.temp;
