@@ -21,6 +21,39 @@ function validateDate() {
 }
 
 document.getElementById("newExerciseSubmit").addEventListener("click", function(event){
+		var req = new XMLHttpRequest();
+		/*var q = "http://52.33.123.28:3000/insert";
+		var exerciseName = document.getElementById("exerciseName").value;
+		var exerciseName = document.getElementById("reps").value;
+		var exerciseName = document.getElementById("weight").value;
+		var exerciseName = document.getElementById("exerciseName").value;*/
+		req.open("GET", "http://52.33.123.28:3000/insert?exerciseName="+document.getElementById("exerciseName").value
+				 +"&reps="+document.getElementById("reps").value
+				 +"&weight="+document.getElementById("weight").value
+				 +"&date="+document.getElementById("year").value
+				 			+"-"+document.getElementById("month").value
+				 			+"-"+document.getElementById("day").value
+				 +"&lbs="+document.getElementById("lbs").value
+				 , true);
+		req.addEventListener("load",function(){
+			if(req.status >= 200 && req.status < 400)
+			{//no error so utilize data returned
+				/*var response = JSON.parse(req.responseText);
+				document.getElementById("cityOut").textContent = response.name;
+				document.getElementById("tempOut").textContent = response.main.temp;
+				document.getElementById("humOut").textContent = response.main.humidity;*/
+			}
+			else
+			{//error
+				console.log("Error in network request: " + request.statusText);
+			}
+		});
+		req.send(JSON.stringify(req.responseText));
+		event.preventDefault();
+	});
+
+/*
+document.getElementById("newExerciseSubmit").addEventListener("click", function(event){
 	var req = new XMLHttpRequest();
 	var payload = {exerciseName: null,
 				  reps: null,
@@ -77,4 +110,4 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 	});
 	req.send(JSON.stringify(payload));
 	event.preventDefault();
-});
+});*/
