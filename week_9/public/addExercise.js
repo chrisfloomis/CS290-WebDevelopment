@@ -88,7 +88,7 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 
 var deleteButtons = document.getElementsByName("deleteExercise");
 for (var i = 0; i <= deleteButtons.length; i += 1) {
-	buttons[i].onclick = function(e) {
+	deleteButtons[i].onclick = function(e) {
 		var req = new XMLHttpRequest();
 		var deleteSite = "http://52.33.123.28:3000/delete?id=";
 		req.open("GET", deleteSite+this.value, true);
