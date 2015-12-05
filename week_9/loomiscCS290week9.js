@@ -32,6 +32,29 @@ app.get('/',function(req,res,next){
   });
 });
 
+app.post('/update',function(req,res,next){
+	var context = {};
+//get table	
+	mysql.pool.query('SELECT * FROM workouts WHERE id=?', [req.body.id] function(err, rows, fields){
+		if(err){
+			next(err);
+			return;
+		}
+	//context.results = JSON.stringify(rows);
+    context.name = rows.name;
+	context.reps = rows.reps;
+	context.weight = rows.weight;
+	if(rows.lbs == 1)
+		context.lbs = 1;
+	if(rows.lbs == 0)
+		context.kg = 1;
+	context.month = rows.date[5]+rows.date[6];
+	context.day = rows.date[8]+rows.date[9];
+	context.year = rows.date[0]+rows.date[1]+rows.date[2]+rows.date[3];
+    res.render('update', context);
+  });
+});
+
 app.get('/insert',function(req,res,next){
 	var context = {};
 	mysql.pool.query("INSERT INTO workouts (`name`,`reps`,`weight`,`date`,`lbs`) VALUES (?,?,?,?,?)", [req.query.exerciseName, req.query.reps, req.query.weight, req.query.date, req.query.lbs], function(err, result){

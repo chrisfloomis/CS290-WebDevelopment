@@ -1,0 +1,21 @@
+<head>
+
+</head>
+<body>
+	<h1>The Home Page</h1>
+	<br>
+	<div>
+		<form name="updateExercise">
+			<fieldset>
+				<legend>Update Exercise</legend>
+				<!-- <input id="action" type="hidden" name="action" value="insert"> -->
+				<p>Exercise Name: <input id="exerciseName" type="text" name="exerciseName" value={{name}}></p>
+				<p>Repetitions: <input id="reps" type="number" name="reps" min="1" value={{reps}}></p>
+				<p>Weight: <input id="weight" type="number" name="weight" min="1" value={{weight}}><input type="radio" id="lbs" name="lbskg" value=1 {{#if lbs}}checked{{/if}}>lbs. <input type="radio" id="kg" name="lbskg" value=0 {{#if kg}}checked{{/if}}>kg.</p>
+				<p>Date Performed (month/day/year): <input id="month" type="number" name="month" min="1" max="12" value={{month}}>/<input id="day" type="number" name="day" min="1" max="31" value={{day}}>/<input id="year" type="number" name="year" size="4"value={{year}}></p>
+			</fieldset>
+			<input type="submit" id="updateExerciseSubmit" value="Add Exercise">
+		</form>
+	</div>
+<script src="/addExercise.js" type="text/javascript"></script>
+</body>

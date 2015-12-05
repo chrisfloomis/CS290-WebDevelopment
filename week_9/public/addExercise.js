@@ -107,12 +107,33 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 		event.preventDefault();
 	});
 
-function deleteClick(clicked_id){console.log(clicked_id);
+function updateClick(clicked_id){//console.log(clicked_id);
+	var req = new XMLHttpRequest();
+	var payload = {id: clicked_id};
+	var updateSite = "http://52.33.123.28:3000/update";
+	req.open("POST", updateSite, true);
+	req.setRequestHeader('Content-Type', 'application/json');
+	req.addEventListener("load",function(){
+		if(req.status >= 200 && req.status < 400){//console.log(clicked_id);
+			
+			
+			}
+			//document.getElementById("wot").removeChild(clicked_id);
+		}
+		else{//error
+			console.log("Error in network request: " + request.statusText);
+		}
+	});
+	req.send(JSON.stringify(req.responseText));
+	event.preventDefault();
+}
+
+function deleteClick(clicked_id){//console.log(clicked_id);
 	var req = new XMLHttpRequest();
 	var deleteSite = "http://52.33.123.28:3000/delete?id=";
 	req.open("GET", deleteSite+clicked_id, true);
 	req.addEventListener("load",function(){
-		if(req.status >= 200 && req.status < 400){console.log(clicked_id);
+		if(req.status >= 200 && req.status < 400){//console.log(clicked_id);
 			var node = document.getElementById(clicked_id);
 			if (node.parentNode) {
 			  node.parentNode.removeChild(node);
@@ -126,9 +147,6 @@ function deleteClick(clicked_id){console.log(clicked_id);
 	req.send(JSON.stringify(req.responseText));
 	event.preventDefault();
 }
-
-
-	
 	
 
 /*
