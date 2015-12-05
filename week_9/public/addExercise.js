@@ -110,6 +110,7 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 function updateClick(clicked_id){console.log(clicked_id);
 	var req = new XMLHttpRequest();
 	var payload = {id: clicked_id};
+	console.log(payload.id);
 	var updateSite = "http://52.33.123.28:3000/update";
 	req.open("POST", updateSite, true);
 	req.setRequestHeader('Content-Type', 'application/json');
