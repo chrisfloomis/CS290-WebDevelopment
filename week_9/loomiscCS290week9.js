@@ -63,14 +63,14 @@ app.get('/reset-table',function(req,res,next){
 
 app.get('/safe-update',function(req,res,next){
   var context = {};
-  mysql.pool.query("SELECT * FROM todo WHERE id=?", [req.query.id], function(err, result){
+  mysql.pool.query("SELECT * FROM workouts WHERE id=?", [req.query.id], function(err, result){
     if(err){
       next(err);
       return;
     }
     if(result.length == 1){
       var curVals = result[0];
-      mysql.pool.query("UPDATE todo SET name=?, done=?, due=? WHERE id=? ",
+      mysql.pool.query("UPDATE workouts SET name=?, done=?, due=? WHERE id=? ",
         [req.query.name || curVals.name, req.query.done || curVals.done, req.query.due || curVals.due, req.query.id],
         function(err, result){
         if(err){
@@ -84,6 +84,18 @@ app.get('/safe-update',function(req,res,next){
   });
 });
 
+app.get('/delete',function(req,res,next){
+	var context = {};
+	mysql.pool.query("DELETE FROM workouts WHERE id=?",[req.query.id], function(err,result){
+		if(err){
+			next(err);
+			return;
+		}
+	context.results = "Deleted " + result.changedRows + " rows.";
+    res.render('home',context);
+	})
+});
+	
 app.use(function(req,res){
   res.status(404);
   res.render('404');

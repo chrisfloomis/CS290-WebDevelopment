@@ -75,6 +75,7 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 				newRow.appendChild(newDateCell);
 				
 				document.getElementById("wot").appendChild(newRow);
+				document.getElementById("wot").reset();
 			}
 			else
 			{//error
@@ -84,6 +85,27 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 		req.send(JSON.stringify(req.responseText));
 		event.preventDefault();
 	});
+
+var deleteButtons = document.getElementsByName("deleteExercise");
+for (var i = 0; i <= deleteButtons.length; i += 1) {
+	buttons[i].onclick = function(e) {
+		var req = new XMLHttpRequest();
+		var deleteSite = "http://52.33.123.28:3000/delete?id=";
+		req.open("GET", deleteSite+this.value, true);
+		req.addEventListener("load",function(){
+			if(req.status >= 200 && req.status < 400){
+				document.getElementByID(this.value).delete();
+			}
+			else{//error
+				console.log("Error in network request: " + request.statusText);
+			}
+		});
+	req.send(JSON.stringify(req.responseText));
+	event.preventDefault();
+	}
+}
+	
+	
 
 /*
 document.getElementById("newExerciseSubmit").addEventListener("click", function(event){
