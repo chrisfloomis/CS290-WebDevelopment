@@ -22,14 +22,14 @@ function validateDate() {
 
 document.getElementById("newExerciseSubmit").addEventListener("click", function(event){
 		var req = new XMLHttpRequest();
-		/*var q = "http://52.33.123.28:3000/insert?exerciseName=";
+		var addSite = "http://52.33.123.28:3000/insert?exerciseName=";
 		q += document.getElementById("exerciseName").value;
 		q += "&reps="+document.getElementById("reps").value;
 		q += "&weight="+document.getElementById("weight").value;
 		var date = document.getElementById("year").value+"-"+document.getElementById("month").value+"-"+document.getElementById("day").value;
 		q += "&date="+date;
 		q += "&lbs="+document.getElementById("lbs").value;*/
-		req.open("GET", "http://52.33.123.28:3000/insert?exerciseName="+document.getElementById("exerciseName").value+"&reps="+document.getElementById("reps").value+"&weight="+document.getElementById("weight").value+"&lbs="+document.getElementById("lbs").value, true);
+		req.open("GET", addSite+document.getElementById("exerciseName").value+"&reps="+document.getElementById("reps").value+"&weight="+document.getElementById("weight").value+"&lbs="+document.getElementById("lbs").value, true);
 		req.addEventListener("load",function(){
 			if(req.status >= 200 && req.status < 400)
 			{//no error so utilize data returned
