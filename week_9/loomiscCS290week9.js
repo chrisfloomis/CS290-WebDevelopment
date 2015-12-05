@@ -41,9 +41,9 @@ app.get('/update',function(req,res,next){
 			return;
 		}
 		
-	var month = rows.date[5]+rows.date[6];
-	var day = rows.date[8]+rows.date[9];
-	var year = rows.date[0]+rows.date[1]+rows.date[2]+rows.date[3];
+	var month = 99;//rows.date[5]+rows.date[6];
+	var day = 99;//rows.date[8]+rows.date[9];
+	var year = 99;//rows.date[0]+rows.date[1]+rows.date[2]+rows.date[3];
 		
 		var updateForm = {"prefilledForm" : '<div id="tmpform">'+
 		'<form name="updateExercise">'+
