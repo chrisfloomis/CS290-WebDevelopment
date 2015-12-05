@@ -35,7 +35,7 @@ app.get('/',function(req,res,next){
 app.post('/update',function(req,res,next){
 	var context = {};
 //get table	
-	mysql.pool.query('SELECT * FROM workouts WHERE id=?', [req.body.id] function(err, rows, fields){
+	mysql.pool.query('SELECT * FROM workouts WHERE id=?', [req.body.id], function(err, rows, fields){
 		if(err){
 			next(err);
 			return;
