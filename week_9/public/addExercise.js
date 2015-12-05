@@ -107,7 +107,7 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 		event.preventDefault();
 	});
 
-function updateClick(clicked_id){//console.log(clicked_id);
+function updateClick(clicked_id){console.log(clicked_id);
 	var req = new XMLHttpRequest();
 	var payload = {id: clicked_id};
 	var updateSite = "http://52.33.123.28:3000/update";
