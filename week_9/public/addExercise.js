@@ -92,11 +92,7 @@ function deleteClick(clicked_id){
 	req.open("GET", deleteSite+clicked_id, true);
 	req.addEventListener("load",function(){
 		if(req.status >= 200 && req.status < 400){
-			var node = document.getElementById("clicked_id");
-			if (node.parentNode) {
-			  node.parentNode.removeChild(node);
-			}
-			//document.getElementById("wot").removeChild(clicked_id);
+			document.getElementById("wot").removeChild(document.getElementById(clicked_id));
 		}
 		else{//error
 			console.log("Error in network request: " + request.statusText);
