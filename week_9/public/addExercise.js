@@ -117,7 +117,7 @@ function updateClick(clicked_id){//console.log(clicked_id);
 		if(req.status >= 200 && req.status < 400){//console.log(clicked_id);
 			
 			
-			}
+			
 			//document.getElementById("wot").removeChild(clicked_id);
 		}
 		else{//error
