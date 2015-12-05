@@ -27,7 +27,7 @@ app.get('/',function(req,res,next){
 			return;
 		}
 	context.results = JSON.stringify(rows);
-    context.workoutDB = JSON.stringify(rows);
+    context.workoutDB = rows;
     res.render('home', context);
   });
 });
