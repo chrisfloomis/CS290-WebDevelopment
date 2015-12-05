@@ -51,17 +51,18 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 				newWeightCell.textContent = newWeight;
 				newRow.appendChild(newWeightCell);
 				
-				var newDateCell = document.createElement("td");
-				var newDate = document.getElementById("year").value+"-"+document.getElementById("month").value+"-"+document.getElementById("day").value;
-				newDateCell.textContent = newDate;
-				newRow.appendChild(newDateCell);
-				
+				newRow.appendChild(document.createElement("td"));
 				//if(document.getElementById("lbs").value != null){
 					//var newLbsCell = document.createElement("td");
 					//var newLbs = document.getElementById("lbs").value;
 					//newLbsCell.textContent = newLbs;
 					//newRow.appendChild(newLbsCell);
 				//}
+				
+				var newDateCell = document.createElement("td");
+				var newDate = document.getElementById("year").value+"-"+document.getElementById("month").value+"-"+document.getElementById("day").value;
+				newDateCell.textContent = newDate;
+				newRow.appendChild(newDateCell);
 				
 				document.getElementById("wot").appendChild(newRow);
 			}
