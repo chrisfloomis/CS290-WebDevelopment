@@ -32,15 +32,41 @@ app.get('/',function(req,res,next){
   });
 });
 
-app.post('/update',function(req,res,next){
+app.get('/update',function(req,res,next){
 	var context = {};
 //get table	
-	mysql.pool.query('SELECT * FROM workouts WHERE id=?', [req.query[0]], function(err, rows, fields){
+	mysql.pool.query('SELECT * FROM workouts WHERE id=?', [req.query.id], function(err, rows, fields){
 		if(err){
 			next(err);
 			return;
 		}
-	
+		
+	var month = rows.date[5]+rows.date[6];
+	var day = rows.date[8]+rows.date[9];
+	var year = rows.date[0]+rows.date[1]+rows.date[2]+rows.date[3];
+		
+		var updateForm = {"prefilledForm" : '<div id="tmpform">'+
+		'<form name="updateExercise">'+
+			'<fieldset>'+
+				'<legend>Update Exercise</legend>'+
+				'<p>Exercise Name: <input id="exerciseName" type="text" name="exerciseName" value='+rows.name+'></p>'+
+				'<p>Repetitions: <input id="reps" type="number" name="reps" min="1" value='+rows.reps+'></p>'+
+				'<p>Weight: <input id="weight" type="number" name="weight" min="1" value='+rows.weight'>'}
+		
+		if(rows.lbs == 1)
+			updateForm.prefilledForm += '<input type="radio" id="lbs" name="lbskg" value=1 checked>lbs. <input type="radio" id="kg" name="lbskg" value=0 >kg.</p>';
+		if(rows.lbs == 0)
+			updateForm.prefilledForm += '<input type="radio" id="lbs" name="lbskg" value=1>lbs. <input type="radio" id="kg" name="lbskg" value=0 checked>kg.</p>';
+		
+		updateForm.prefilledForm += '<p>Date Performed (month/day/year):'+
+			'<input id="month" type="number" name="month" min="1" max="12" value='+month+'>/'+
+			'<input id="day" type="number" name="day" min="1" max="31" value='+day+'>/'+
+			'<input id="year" type="number" name="year" size="4"value='+year+'></p>'+
+			'</fieldset>'+
+			'<input type="submit" id="updateExerciseSubmit" value="Add Exercise">'+
+		'</form>'+
+	'</div>';
+		
     context.name = rows.name;
 	context.reps = rows.reps;
 	context.weight = rows.weight;
