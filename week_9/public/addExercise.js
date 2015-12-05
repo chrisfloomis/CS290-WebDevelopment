@@ -23,7 +23,7 @@ function validateDate() {
 document.getElementById("newExerciseSubmit").addEventListener("click", function(event){
 		var req = new XMLHttpRequest();
 		var addSite = "http://52.33.123.28:3000/insert?exerciseName=";
-		q += document.getElementById("exerciseName").value;
+		/*q += document.getElementById("exerciseName").value;
 		q += "&reps="+document.getElementById("reps").value;
 		q += "&weight="+document.getElementById("weight").value;
 		var date = document.getElementById("year").value+"-"+document.getElementById("month").value+"-"+document.getElementById("day").value;
