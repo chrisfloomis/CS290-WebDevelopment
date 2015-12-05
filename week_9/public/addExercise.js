@@ -40,7 +40,7 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 				var newName = document.getElementById("exerciseName").value;
 				newNameCell.textContent = newName;
 				newRow.appendChild(newNameCell);
-				/*
+				
 				var newRepsCell = document.createElement("td");
 				var newReps = document.getElementById("reps").value;
 				newRepsCell.textContent = newReps;
@@ -55,7 +55,7 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 				var newDate = document.getElementById("year").value+"-"+document.getElementById("month").value+"-"+document.getElementById("day").value;
 				newDateCell.textContent = newDate;
 				newRow.appendChild(newDateCell);
-				*/
+				
 				//if(document.getElementById("lbs").value != null){
 					//var newLbsCell = document.createElement("td");
 					//var newLbs = document.getElementById("lbs").value;
@@ -63,7 +63,7 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 					//newRow.appendChild(newLbsCell);
 				//}
 				
-				//document.getElementById("wot").appendChild(newRow);
+				document.getElementById("wot").appendChild(newRow);
 			}
 			else
 			{//error
