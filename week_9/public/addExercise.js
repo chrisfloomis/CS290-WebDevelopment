@@ -80,7 +80,7 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 				var newUpdateButton = document.createElement("button");
 				newUpdateButton.textContent = "Update";
 				newUpdateButton.setAttribute("name", "updateButton");
-				newUpdateButton.setAttribute("onClick", "updateClick\(this.value\)");
+				newUpdateButton.setAttribute("onClick", "updateClick(this.value)");
 				newUpdateButton.setAttribute("value", JSON.stringify(response.newID));
 				newUpdateCell.appendChild(newUpdateButton);
 				newRow.appendChild(newUpdateCell);
@@ -89,7 +89,7 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 				var newDeleteButton = document.createElement("button");
 				newDeleteButton.textContent = "Delete";
 				newDeleteButton.setAttribute("name", "deleteButton");
-				newDeleteButton.setAttribute("onClick", "deleteClick\(this.value\)");
+				newDeleteButton.setAttribute("onClick", "deleteClick(this.value)");
 				newDeleteButton.setAttribute("value", JSON.stringify(response.newID));
 				newDeleteCell.appendChild(newDeleteButton);
 				newRow.appendChild(newDeleteCell);
