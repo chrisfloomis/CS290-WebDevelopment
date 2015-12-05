@@ -106,7 +106,8 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 		event.preventDefault();
 	});
 
-function deleteClick(clicked_id){console.log(clicked_id);
+function deleteClick(clicked_id){
+	console.log(document.getElementById("clicked_id"));
 	var req = new XMLHttpRequest();
 	var deleteSite = "http://52.33.123.28:3000/delete?id=";
 	req.open("GET", deleteSite+clicked_id, true);
