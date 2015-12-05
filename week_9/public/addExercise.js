@@ -89,10 +89,10 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 function deleteClick(clicked_id){
 	var req = new XMLHttpRequest();
 	var deleteSite = "http://52.33.123.28:3000/delete?id=";
-	req.open("GET", deleteSite+this.value, true);
+	req.open("GET", deleteSite+clicked_id, true);
 	req.addEventListener("load",function(){
 		if(req.status >= 200 && req.status < 400){
-			document.getElementByID(clicked_id).delete();
+			document.getElementById("wot").removeChild(clicked_id);
 		}
 		else{//error
 			console.log("Error in network request: " + request.statusText);
