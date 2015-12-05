@@ -30,7 +30,7 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 		q += "&date="+date;
 		q += "&lbs="+document.getElementById("lbs").value;*/
 		var date = document.getElementById("year").value+"-"+document.getElementById("month").value+"-"+document.getElementById("day").value;
-		req.open("GET", addSite+document.getElementById("exerciseName").value+"&reps="+document.getElementById("reps").value+"&weight="+document.getElementById("weight").value+"&date="+date, true);
+		req.open("GET", addSite+document.getElementById("exerciseName").value+"&reps="+document.getElementById("reps").value+"&weight="+document.getElementById("weight").value+"&lbs="+document.getElementById("lbs").value+"&date="+date, true);
 		req.addEventListener("load",function(){
 			if(req.status >= 200 && req.status < 400)
 			{//no error so utilize data returned
@@ -52,12 +52,12 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 				newWeightCell.textContent = newWeight;
 				newRow.appendChild(newWeightCell);
 				
-				newRow.appendChild(document.createElement("td"));
+				//newRow.appendChild(document.createElement("td"));
 				//if(document.getElementById("lbs").value != null){
-					//var newLbsCell = document.createElement("td");
-					//var newLbs = document.getElementById("lbs").value;
-					//newLbsCell.textContent = newLbs;
-					//newRow.appendChild(newLbsCell);
+					var newLbsCell = document.createElement("td");
+					var newLbs = document.getElementById("lbs").value;
+					newLbsCell.textContent = newLbs;
+					newRow.appendChild(newLbsCell);
 				//}
 				
 				var newDateCell = document.createElement("td");
