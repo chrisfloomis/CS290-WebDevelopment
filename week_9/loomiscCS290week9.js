@@ -20,19 +20,6 @@ var mysql = require('./mysqlpool.js');
 
 app.get('/',function(req,res,next){
 	var context = {};
-/*create table if it does not exist
-	mysql.pool.query("CREATE TABLE IF NOT EXISTS workouts("+
-    "id INT PRIMARY KEY AUTO_INCREMENT,"+
-    "name VARCHAR(255) NOT NULL,"+
-    "reps INT,"+
-    "weight INT,"+
-    "date DATE,"+
-    "lbs BOOLEAN)", function(err, rows, fields){
-    	if(err){
-			next(err);
-			return;
-		}});	
-*/	
 //get table	
 	mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
 		if(err){
