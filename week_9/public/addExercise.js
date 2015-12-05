@@ -57,9 +57,11 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 				newRow.appendChild(newCell);
 				
 				newCell = document.createElement("td");
-				var newLbs = document.getElementById("lbs").value;
-				newCell.textContent = newLbs;
-				newRow.appendChild(newCell);
+				if(document.getElementById("lbs").value != null){
+					var newLbs = document.getElementById("lbs").value;
+					newCell.textContent = newLbs;
+					newRow.appendChild(newCell);
+				}
 				
 				document.getElementById("wot").appendChild(newRow);
 			}
