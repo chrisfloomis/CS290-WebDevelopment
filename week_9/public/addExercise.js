@@ -74,6 +74,20 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 				newDateCell.textContent = newDate;
 				newRow.appendChild(newDateCell);
 				
+				var newUpdateCell = document.createElement("td");
+				var newUpdateButton = document.createElement("button");
+				newUpdateButton.setAttribute("name", "updateButton");
+				newUpdateButton.setAttribute("onClick", "updateClick\(this.value\)");
+				newUpdateButton.setAttribute("value", "{{this.id}}");
+				newRow.appendChild(newUpdateCell);
+				
+				var newDeleteCell = document.createElement("td");
+				var newDeleteButton = document.createElement("button");
+				newDeleteButton.setAttribute("name", "deleteButton");
+				newDeleteButton.setAttribute("onClick", "deleteClick\(this.value\)");
+				newDeleteButton.setAttribute("value", "{{this.id}}");
+				newRow.appendChild(newDeleteCell);
+				
 				document.getElementById("wot").appendChild(newRow);
 				document.getElementById("wot").reset();
 			}
