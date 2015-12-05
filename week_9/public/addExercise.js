@@ -34,13 +34,13 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 			if(req.status >= 200 && req.status < 400)
 			{//no error so utilize data returned
 				console.log("newExerciseSubmit clicked and successful callback");
-				/*var newRow = document.createElement("tr");
+				var newRow = document.createElement("tr");
 				
 				var newNameCell = document.createElement("td");
 				var newName = document.getElementById("exerciseName").value;
 				newNameCell.textContent = newName;
 				newRow.appendChild(newNameCell);
-				
+				/*
 				var newRepsCell = document.createElement("td");
 				var newReps = document.getElementById("reps").value;
 				newRepsCell.textContent = newReps;
@@ -63,7 +63,7 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 					//newRow.appendChild(newLbsCell);
 				//}
 				
-				//document.getElementById("wot").appendChild(newRow);
+				document.getElementById("wot").appendChild(newRow);
 			}
 			else
 			{//error
