@@ -48,7 +48,7 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 			if(req.status >= 200 && req.status < 400)
 			{//no error so utilize data returned
 				//console.log("newExerciseSubmit clicked and successful callback");
-				var response = JSON.parse(req.responseText);
+				//var response = JSON.parse(req.responseText);
 				
 				var newRow = document.createElement("tr");
 				
@@ -81,7 +81,7 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 				var newUpdateButton = document.createElement("button");
 				newUpdateButton.setAttribute("name", "updateButton");
 				newUpdateButton.setAttribute("onClick", "updateClick\(this.value\)");
-				newUpdateButton.setAttribute("value", JSON.stringify(response.id));
+				//newUpdateButton.setAttribute("value", JSON.stringify(response.id));
 				newUpdateCell.appendChild(newUpdateButton);
 				newRow.appendChild(newUpdateCell);
 				
@@ -90,7 +90,7 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 				var newDeleteButton = document.createElement("button");
 				newDeleteButton.setAttribute("name", "deleteButton");
 				newDeleteButton.setAttribute("onClick", "deleteClick\(this.value\)");
-				newDeleteButton.setAttribute("value", JSON.stringify(response.id));
+				//newDeleteButton.setAttribute("value", JSON.stringify(response.id));
 				newDeleteCell.appendChild(newDeleteButton);
 				newRow.appendChild(newDeleteCell);
 				
