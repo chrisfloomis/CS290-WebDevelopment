@@ -124,7 +124,7 @@ function updateClick(clicked_id){//console.log(clicked_id);
 			console.log("Error in network request: " + request.statusText);
 		}
 	});
-	req.send(JSON.stringify(req.responseText));
+	req.send(JSON.stringify(payload));
 	event.preventDefault();
 }
 
