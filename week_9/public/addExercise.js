@@ -33,11 +33,34 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 		req.addEventListener("load",function(){
 			if(req.status >= 200 && req.status < 400)
 			{//no error so utilize data returned
-				//req.open("GET", "http://52.33.123.28:3000/", true);
-				/*var response = JSON.parse(req.responseText);
-				document.getElementById("cityOut").textContent = response.name;
-				document.getElementById("tempOut").textContent = response.main.temp;
-				document.getElementById("humOut").textContent = response.main.humidity;*/
+				var newRow = document.createElement("tr");
+				
+				var newCell = document.createElement("td");
+				var newName = document.getElementById("exerciseName").value;
+				newCell.textContent = newName;
+				newRow.appendChild(newCell);
+				
+				newCell = document.createElement("td");
+				var newReps = document.getElementById("reps").value;
+				newCell.textContent = newReps;
+				newRow.appendChild(newCell);
+				
+				newCell = document.createElement("td");
+				var newWeight = document.getElementById("weight").value;
+				newCell.textContent = newWeight;
+				newRow.appendChild(newCell);
+				
+				newCell = document.createElement("td");
+				var newDate = document.getElementById("year").value+"-"+document.getElementById("month").value+"-"+document.getElementById("day").value;
+				newCell.textContent = newDate;
+				newRow.appendChild(newCell);
+				
+				newCell = document.createElement("td");
+				var newLbs = document.getElementById("lbs").value;
+				newCell.textContent = newLbs;
+				newRow.appendChild(newCell);
+				
+				document.getElementById("wot").appendChild(newRow);
 			}
 			else
 			{//error
