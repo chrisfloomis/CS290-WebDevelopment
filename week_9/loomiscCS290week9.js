@@ -39,8 +39,11 @@ app.get('/insert',function(req,res,next){
       next(err);
       return;
     }
-    context.results = "Inserted id " + result.insertId;
-    res.render('home',context);
+	var retobject = {"results" : "Inserted id " + result.insertId,
+					"newID" : result.insertId}
+	res.send(retobject);
+    //context.results = "Inserted id " + result.insertId;
+    //res.render('home',context);
   });
 });
 
