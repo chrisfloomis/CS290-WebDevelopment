@@ -40,7 +40,7 @@ app.post('/update',function(req,res,next){
 			next(err);
 			return;
 		}
-	//context.results = JSON.stringify(rows);
+	
     context.name = rows.name;
 	context.reps = rows.reps;
 	context.weight = rows.weight;
