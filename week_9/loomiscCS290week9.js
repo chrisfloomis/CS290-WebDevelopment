@@ -31,7 +31,7 @@ app.get('/',function(req,res,next){
     res.render('home', context);
   });
 });
-
+/*
 app.post('/update',function(req,res,next){
 	var context = {};
 //get table	
@@ -53,7 +53,7 @@ app.post('/update',function(req,res,next){
 	context.year = rows.date[0]+rows.date[1]+rows.date[2]+rows.date[3];
     res.render('update', context);
   });
-});
+});*/
 
 app.get('/insert',function(req,res,next){
 	var context = {};
