@@ -20,6 +20,16 @@ function validateDate() {
 	}
 }
 
+function checkRadiolbskg(){
+	var lbsRadio = document.getElementsByName("lbskg");
+	var weightUnit = null;
+	for(var i=0; i<lbsRadio.length; i++){
+		if(lbsRadio[i].checked)
+			weightUnit = lbsRadio[i].value;
+	}
+	return weightUnit;
+}
+
 document.getElementById("newExerciseSubmit").addEventListener("click", function(event){
 		var req = new XMLHttpRequest();
 		var addSite = "http://52.33.123.28:3000/insert?exerciseName=";
@@ -29,35 +39,33 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 		var date = document.getElementById("year").value+"-"+document.getElementById("month").value+"-"+document.getElementById("day").value;
 		q += "&date="+date;
 		q += "&lbs="+document.getElementById("lbs").value;*/
-		console.log(document.getElementById("lbs").value);
+		
+		var radiolbskg = checkRadiolbskg();
 		var date = document.getElementById("year").value+"-"+document.getElementById("month").value+"-"+document.getElementById("day").value;
-		req.open("GET", addSite+document.getElementById("exerciseName").value+"&reps="+document.getElementById("reps").value+"&weight="+document.getElementById("weight").value+"&date="+date, true);
+	
+		req.open("GET", addSite+document.getElementById("exerciseName").value+"&reps="+document.getElementById("reps").value+"&weight="+document.getElementById("weight").value+"&lbs="+radiolbskg+"&date="+date, true);
 		req.addEventListener("load",function(){
 			if(req.status >= 200 && req.status < 400)
 			{//no error so utilize data returned
-				console.log("newExerciseSubmit clicked and successful callback");
+				//console.log("newExerciseSubmit clicked and successful callback");
 				var newRow = document.createElement("tr");
 				
 				var newNameCell = document.createElement("td");
-				var newName = document.getElementById("exerciseName").value;
-				newNameCell.textContent = newName;
+				newNameCell.textContent = document.getElementById("exerciseName").value;
 				newRow.appendChild(newNameCell);
 				
 				var newRepsCell = document.createElement("td");
-				var newReps = document.getElementById("reps").value;
-				newRepsCell.textContent = newReps;
+				newRepsCell.textContent = document.getElementById("reps").value;
 				newRow.appendChild(newRepsCell);
 				
 				var newWeightCell = document.createElement("td");
-				var newWeight = document.getElementById("weight").value;
-				newWeightCell.textContent = newWeight;
+				newWeightCell.textContent = document.getElementById("weight").value;
 				newRow.appendChild(newWeightCell);
 				
 				//newRow.appendChild(document.createElement("td"));
 				//if(document.getElementById("lbs").value != null){
 					var newLbsCell = document.createElement("td");
-					var newLbs = document.getElementById("lbs").value;
-					newLbsCell.textContent = newLbs;
+					newLbsCell.textContent = checkRadiolbskg();
 					newRow.appendChild(newLbsCell);
 				//}
 				
