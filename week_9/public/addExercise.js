@@ -118,6 +118,7 @@ function updateClick(clicked_id){console.log(clicked_id);
 			var tmpForm = document.createElement("div");
 			tmpForm.textContent = JSON.stringify(response.prefilledForm);
 			var bod = document.getElementsByTagName("body");
+			bod = bod[0];
 			bod.appendChild(tmpForm);
 			
 			//document.getElementById("wot").removeChild(clicked_id);
