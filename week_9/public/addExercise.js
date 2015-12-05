@@ -51,6 +51,7 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 				var response = JSON.parse(req.responseText);
 				
 				var newRow = document.createElement("tr");
+				newRow.setAttribute("id", JSON.stringify(response.newID));
 				
 				var newNameCell = document.createElement("td");
 				newNameCell.textContent = document.getElementById("exerciseName").value;
