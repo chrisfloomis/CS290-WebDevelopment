@@ -51,7 +51,7 @@ app.get('/update',function(req,res,next){
 				'<legend>Update Exercise</legend>'+
 				'<p>Exercise Name: <input id="exerciseName" type="text" name="exerciseName" value='+rows.name+'></p>'+
 				'<p>Repetitions: <input id="reps" type="number" name="reps" min="1" value='+rows.reps+'></p>'+
-				'<p>Weight: <input id="weight" type="number" name="weight" min="1" value='+rows.weight'>'}
+				'<p>Weight: <input id="weight" type="number" name="weight" min="1" value='+rows.weight+'>'}
 		
 		if(rows.lbs == 1)
 			updateForm.prefilledForm += '<input type="radio" id="lbs" name="lbskg" value=1 checked>lbs. <input type="radio" id="kg" name="lbskg" value=0 >kg.</p>';
