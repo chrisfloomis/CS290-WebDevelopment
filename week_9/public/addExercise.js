@@ -113,9 +113,9 @@ function deleteClick(clicked_id){console.log(clicked_id);
 	req.addEventListener("load",function(){
 		if(req.status >= 200 && req.status < 400){
 			var node = document.getElementById(clicked_id);
-			if (node.parentNode) {
+			//if (node.parentNode) {
 			  node.parentNode.removeChild(node);
-			}
+			//}
 			//document.getElementById("wot").removeChild(clicked_id);
 		}
 		else{//error
