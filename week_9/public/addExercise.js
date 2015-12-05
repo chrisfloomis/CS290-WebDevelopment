@@ -33,6 +33,7 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 		req.addEventListener("load",function(){
 			if(req.status >= 200 && req.status < 400)
 			{//no error so utilize data returned
+				console.log("works");
 				var newRow = document.createElement("tr");
 				
 				var newCell = document.createElement("td");
