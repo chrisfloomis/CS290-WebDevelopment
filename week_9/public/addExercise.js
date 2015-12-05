@@ -89,7 +89,7 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 				newRow.appendChild(newDeleteCell);
 				
 				document.getElementById("wot").appendChild(newRow);
-				document.getElementById("wot").reset();
+				//document.getElementById("wot").reset();
 			}
 			else
 			{//error
