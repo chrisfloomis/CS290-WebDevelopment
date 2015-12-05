@@ -109,8 +109,10 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 
 function updateClick(clicked_id){console.log(clicked_id);
 	var req = new XMLHttpRequest();
-	var updateSite = "http://52.33.123.28:3000/update?id="+clicked_id;
-	req.open("GET", updateSite, true);
+	var payload = {id: clicked_id};
+	console.log(payload.id);
+	var updateSite = "http://52.33.123.28:3000/update";
+	req.open("POST", updateSite, true);
 	req.setRequestHeader('Content-Type', 'application/json');
 	req.addEventListener("load",function(){
 		if(req.status >= 200 && req.status < 400){//console.log(clicked_id);
@@ -123,7 +125,7 @@ function updateClick(clicked_id){console.log(clicked_id);
 			console.log("Error in network request: " + request.statusText);
 		}
 	});
-	req.send(JSON.stringify(req.responseText));
+	req.send(JSON.stringify(payload));
 	event.preventDefault();
 }
 
