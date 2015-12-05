@@ -4,22 +4,23 @@
     	<title>test week 9</title>
 	</head>
 	<body>
-		<h1>The Home Page</h1>
-		<br>
-		<div>
-			<form name="addExercise" onsubmit="return validateDate()">
-				<fieldset>
-					<legend>Add Exercise</legend>
-					<p>Exercise Name: <input id="exerciseName" type="text" name="exerciseName" required></p>
-					<p>Repetitions: <input id="reps" type="number" name="reps" min="1"></p>
-					<p>Weight: <input id="weight" type="number" name="weight" min="1"><input type="radio" name="lbskg" value="lbs">lbs. <input type="radio" name="lbskg" value="kg">kg.</p>
-					<p>Date Performed (month/day/year): <input id="month" type="number" name="month" min="1" max="12">/<input id="day" type="number" name="day" min="1" max="31">/<input id="year" type="number" name="year" size="4"></p>
-				</fieldset>
-				<input type="submit" id="newExerciseSubmit" value="Add Exercise">
-			</form>
+	<h1>The Home Page</h1>
+	<br>
+	<div>
+		<form name="addExercise" onsubmit="return validateDate()">
+			<fieldset>
+				<legend>Add Exercise</legend>
+				<!-- <input id="action" type="hidden" name="action" value="insert"> -->
+				<p>Exercise Name: <input id="exerciseName" type="text" name="exerciseName" required></p>
+				<p>Repetitions: <input id="reps" type="number" name="reps" min="1"></p>
+				<p>Weight: <input id="weight" type="number" name="weight" min="1"><input type="radio" id="1" name="lbskg" value="lbs">lbs. <input type="radio" id="0" name="lbskg" value="kg">kg.</p>
+				<p>Date Performed (month/day/year): <input id="month" type="number" name="month" min="1" max="12">/<input id="day" type="number" name="day" min="1" max="31">/<input id="year" type="number" name="year" size="4"></p>
+			</fieldset>
+			<input type="submit" id="newExerciseSubmit" value="Add Exercise">
+		</form>
 		</div>
 		<div>
-			<table>
+			<table id="wot">
 				<tr>
 					<th>Exercise Name</th>
 					<th>Reps</th>
@@ -29,6 +30,6 @@
 				</tr>
 			</table>
 		</div>
-		<script src="/loomiscCS290week9.js" type="text/javascript"></script>
+		<script src="/addExercise.js" type="text/javascript"></script>
 	</body>
 </html>
