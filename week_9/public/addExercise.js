@@ -116,7 +116,7 @@ function updateClick(clicked_id){console.log(clicked_id);
 		if(req.status >= 200 && req.status < 400){//console.log(clicked_id);
 			var response = JSON.parse(req.responseText);
 			var tmpForm = document.createElement("div");
-			tmpForm.textContent = JSON.stringify(response.prefilledForm);
+			tmpForm.textContent = response.prefilledForm;
 			var bod = document.getElementsByTagName("body");
 			bod = bod[0];
 			bod.appendChild(tmpForm);
