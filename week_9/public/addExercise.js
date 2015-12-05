@@ -56,8 +56,8 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 				newCell.textContent = newDate;
 				newRow.appendChild(newCell);
 				
-				newCell = document.createElement("td");
 				if(document.getElementById("lbs").value != null){
+					newCell = document.createElement("td");
 					var newLbs = document.getElementById("lbs").value;
 					newCell.textContent = newLbs;
 					newRow.appendChild(newCell);
