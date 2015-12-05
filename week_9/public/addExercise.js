@@ -114,8 +114,11 @@ function updateClick(clicked_id){console.log(clicked_id);
 	req.setRequestHeader('Content-Type', 'application/json');
 	req.addEventListener("load",function(){
 		if(req.status >= 200 && req.status < 400){//console.log(clicked_id);
-			
-			
+			var response = JSON.parse(req.responseText);
+			var tmpForm = document.createElement("div");
+			tmpForm.textContent = JSON.stringify(response.prefilledForm);
+			var bod = document.getElementsByTagName("body");
+			bod.appendChild(tmpForm);
 			
 			//document.getElementById("wot").removeChild(clicked_id);
 		}
