@@ -36,32 +36,32 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 				console.log("newExerciseSubmit clicked and successful callback");
 				var newRow = document.createElement("tr");
 				
-				var newCell = document.createElement("td");
+				var newNameCell = document.createElement("td");
 				var newName = document.getElementById("exerciseName").value;
-				newCell.textContent = newName;
-				newRow.appendChild(newCell);
+				newNameCell.textContent = newName;
+				newRow.appendChild(newNameCell);
 				
-				newCell = document.createElement("td");
+				var newRepsCell = document.createElement("td");
 				var newReps = document.getElementById("reps").value;
-				newCell.textContent = newReps;
-				newRow.appendChild(newCell);
+				newRepsCell.textContent = newReps;
+				newRow.appendChild(newRepsCell);
 				
-				newCell = document.createElement("td");
+				var newWeightCell = document.createElement("td");
 				var newWeight = document.getElementById("weight").value;
-				newCell.textContent = newWeight;
-				newRow.appendChild(newCell);
+				newWeightCell.textContent = newWeight;
+				newRow.appendChild(newWeightCell);
 				
-				newCell = document.createElement("td");
+				var newDateCell = document.createElement("td");
 				var newDate = document.getElementById("year").value+"-"+document.getElementById("month").value+"-"+document.getElementById("day").value;
-				newCell.textContent = newDate;
-				newRow.appendChild(newCell);
+				newDateCell.textContent = newDate;
+				newRow.appendChild(newDateCell);
 				
-				if(document.getElementById("lbs").value != null){
-					newCell = document.createElement("td");
+				//if(document.getElementById("lbs").value != null){
+					var newLbsCell = document.createElement("td");
 					var newLbs = document.getElementById("lbs").value;
-					newCell.textContent = newLbs;
-					newRow.appendChild(newCell);
-				}
+					newLbsCell.textContent = newLbs;
+					newRow.appendChild(newLbsCell);
+				//}
 				
 				document.getElementById("wot").appendChild(newRow);
 			}
