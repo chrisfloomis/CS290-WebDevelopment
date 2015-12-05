@@ -66,8 +66,10 @@ app.get('/update',function(req,res,next){
 			'<input type="submit" id="updateExerciseSubmit" value="Add Exercise">'+
 		'</form>'+
 	'</div>';
-		
-    context.name = rows.name;
+	
+	res.send(updateForm);	
+	
+    /*context.name = rows.name;
 	context.reps = rows.reps;
 	context.weight = rows.weight;
 	if(rows.lbs == 1)
@@ -77,7 +79,7 @@ app.get('/update',function(req,res,next){
 	context.month = rows.date[5]+rows.date[6];
 	context.day = rows.date[8]+rows.date[9];
 	context.year = rows.date[0]+rows.date[1]+rows.date[2]+rows.date[3];
-    res.render('update', context);
+    res.render('update', context);*/
   });
 });
 
