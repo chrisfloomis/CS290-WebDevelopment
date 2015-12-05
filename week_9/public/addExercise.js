@@ -88,7 +88,7 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 				var newDeleteButton = document.createElement("button");
 				newDeleteButton.setAttribute("name", "deleteButton");
 				newDeleteButton.setAttribute("onClick", "deleteClick\(this.value\)");
-				newDeleteButton.setAttribute("value", JSON.stringify(response.id)));
+				newDeleteButton.setAttribute("value", JSON.stringify(response.id));
 				newDeleteCell.appendChild(newDeleteButton);
 				newRow.appendChild(newDeleteCell);
 				
