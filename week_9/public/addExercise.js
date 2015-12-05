@@ -34,7 +34,7 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 			if(req.status >= 200 && req.status < 400)
 			{//no error so utilize data returned
 				console.log("newExerciseSubmit clicked and successful callback");
-				var newRow = document.createElement("tr");
+				/*var newRow = document.createElement("tr");
 				
 				var newNameCell = document.createElement("td");
 				var newName = document.getElementById("exerciseName").value;
@@ -55,7 +55,7 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 				var newDate = document.getElementById("year").value+"-"+document.getElementById("month").value+"-"+document.getElementById("day").value;
 				newDateCell.textContent = newDate;
 				newRow.appendChild(newDateCell);
-				
+				*/
 				//if(document.getElementById("lbs").value != null){
 					//var newLbsCell = document.createElement("td");
 					//var newLbs = document.getElementById("lbs").value;
