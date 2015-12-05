@@ -34,8 +34,8 @@
 					<td>{{this.weight}}</td>
 					<td>{{this.lbs}}</td>
 					<td>{{this.date}}</td>
-					<td><button type="button" name="updateExercise" value={{this.id}}>Update</button></td>
-					<td><button type="button" name="deleteExercise" value={{this.id}}>Delete</button></td>
+					<td><button type="button" name="updateExercise" onClick="deleteClick(this.value)" value={{this.id}}>Update</button></td>
+					<td><button type="button" name="deleteExercise" onClick="deleteClick(this.value)" value={{this.id}}>Delete</button></td>
 				</tr>
 				{{/each}}
 			</table>

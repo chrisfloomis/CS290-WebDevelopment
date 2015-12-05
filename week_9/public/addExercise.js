@@ -86,24 +86,23 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 		event.preventDefault();
 	});
 
-var deleteButtons = document.getElementsByName("deleteExercise");
-for (var i = 0; i <= deleteButtons.length; i += 1) {
-	deleteButtons[i].onclick = function(e) {
-		var req = new XMLHttpRequest();
-		var deleteSite = "http://52.33.123.28:3000/delete?id=";
-		req.open("GET", deleteSite+this.value, true);
-		req.addEventListener("load",function(){
-			if(req.status >= 200 && req.status < 400){
-				document.getElementByID(this.value).delete();
-			}
-			else{//error
-				console.log("Error in network request: " + request.statusText);
-			}
-		});
+function deleteClick(clicked_id){
+	var req = new XMLHttpRequest();
+	var deleteSite = "http://52.33.123.28:3000/delete?id=";
+	req.open("GET", deleteSite+this.value, true);
+	req.addEventListener("load",function(){
+		if(req.status >= 200 && req.status < 400){
+			document.getElementByID(clicked_id).delete();
+		}
+		else{//error
+			console.log("Error in network request: " + request.statusText);
+		}
+	});
 	req.send(JSON.stringify(req.responseText));
 	event.preventDefault();
-	}
 }
+
+
 	
 	
 
