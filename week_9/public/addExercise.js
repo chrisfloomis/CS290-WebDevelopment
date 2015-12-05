@@ -29,7 +29,7 @@ document.getElementById("newExerciseSubmit").addEventListener("click", function(
 		var date = document.getElementById("year").value+"-"+document.getElementById("month").value+"-"+document.getElementById("day").value;
 		q += "&date="+date;
 		q += "&lbs="+document.getElementById("lbs").value;*/
-		req.open("GET", "http://52.33.123.28:3000/insert?exerciseName="+document.getElementById("exerciseName").value, true);
+		req.open("GET", "http://52.33.123.28:3000/insert?exerciseName="+document.getElementById("exerciseName").value+"&reps="+document.getElementById("reps").value+"&weight="+document.getElementById("weight").value+"&lbs="+document.getElementById("lbs").value, true);
 		req.addEventListener("load",function(){
 			if(req.status >= 200 && req.status < 400)
 			{//no error so utilize data returned
