@@ -17,7 +17,10 @@
 			<input type="submit" id="newExerciseSubmit" value="Add Exercise">
 		</form>
 	</div>
-	<p>{{results}}</p>
+	<p>{{#each results}}
+	{{this.name}}<br>
+		{{this.reps}}<br>
+	{{/each}}</p>
 		<div>
 			<table id="wot">
 				<tr>
