@@ -29,13 +29,13 @@
 				</tr>
 				{{#each workoutDB}}
 				<tr>
-					<th>{{this.name}}</th>
+					<td>{{this.name}}</td>
 					<td>{{this.reps}}</td>
 					<td>{{this.weight}}</td>
 					<td>{{this.date}}</td>
 					<td>{{this.lbs}}</td>
-					<td><button type="button" name="updateExercise" value={{this.id}}></td>
-					<td><button type="button" name="deleteExercise" value={{this.id}}></td>
+					<td><button type="button" name="updateExercise" value={{this.id}}>Update</button></td>
+					<td><button type="button" name="deleteExercise" value={{this.id}}>Delete</button></td>
 				</tr>
 				{{/each}}
 			</table>
