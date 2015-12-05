@@ -26,7 +26,7 @@ app.get('/',function(req,res,next){
 			next(err);
 			return;
 		}
-	context.results = rows.date[0];
+	context.results = JSON.stringify(rows);
     context.workoutDB = rows;
     res.render('home', context);
   });
