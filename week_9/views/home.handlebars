@@ -19,7 +19,7 @@
 	</div>
 	<p>{{results}}</p>
 		<div>
-			<table id="wot">
+			<table>
 				<thead>
 				<tr>
 					<th>Exercise Name</th>
@@ -29,7 +29,7 @@
 					<th>Date Completed</th>
 				</tr>
 				</thead>
-				<tbody>
+				<tbody id="wot">
 				{{#each workoutDB}}
 				<tr id={{this.id}}>
 					<td>{{this.name}}</td>
