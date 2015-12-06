@@ -155,7 +155,8 @@ function updateClick(clicked_id){console.log(clicked_id);
 			lbsIn.setAttribute("id", "lbs");
 			lbsIn.setAttribute("name", "lbskg");
 			lbsIn.setAttribute("value", "1");
-			lbsIn.textContent = " lbs. ";
+			var lbsText = document.createElement("span");
+			lbsText.textContent = " lbs. ";
 			var kgIn = document.createElement("input");
 			kgIn.setAttribute("type", "radio");
 			kgIn.setAttribute("id", "kg");
@@ -170,6 +171,7 @@ function updateClick(clicked_id){console.log(clicked_id);
 			}
 			xWeight.appendChild(weightIn);
 			xWeight.appendChild(lbsIn);
+			xWeight.appendChild(lbsText);
 			xWeight.appendChild(kgIn);
 			
 			var xDate = document.createElement("p");
