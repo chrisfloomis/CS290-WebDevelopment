@@ -33,13 +33,6 @@ function checkRadiolbskg(){
 document.getElementById("newExerciseSubmit").addEventListener("click", function(event){
 		var req = new XMLHttpRequest();
 		var addSite = "http://52.33.123.28:3000/insert?exerciseName=";
-		/*q += document.getElementById("exerciseName").value;
-		q += "&reps="+document.getElementById("reps").value;
-		q += "&weight="+document.getElementById("weight").value;
-		var date = document.getElementById("year").value+"-"+document.getElementById("month").value+"-"+document.getElementById("day").value;
-		q += "&date="+date;
-		q += "&lbs="+document.getElementById("lbs").value;*/
-		
 		var radiolbskg = checkRadiolbskg();
 		var date = document.getElementById("year").value+"-"+document.getElementById("month").value+"-"+document.getElementById("day").value;
 	
@@ -119,7 +112,7 @@ function updateClick(clicked_id){console.log(clicked_id);
 			response = response[0];
 			//console.log(response.name);
 			var tmpForm = document.createElement("form");
-			tmpForm.setAttribute("name","updateExercise");
+			tmpForm.setAttribute("id","updateExercise");
 			
 			var fieldset = document.createElement("fieldset");
 			var legend = document.createElement("legend");
@@ -127,8 +120,8 @@ function updateClick(clicked_id){console.log(clicked_id);
 			
 			var xName = document.createElement("p");
 			xName.textContent = "Exercise Name: ";
-			var nameIn = document.createElement("input");
-			nameIn.setAttribute("id", "exerciseName");
+			var nameIn = document.createElement("input").required;
+			nameIn.setAttribute("id", "updateName");
 			nameIn.setAttribute("type", "text");
 			nameIn.setAttribute("name", "exerciseName");
 			nameIn.setAttribute("value", response.name);
@@ -137,7 +130,7 @@ function updateClick(clicked_id){console.log(clicked_id);
 			var xReps = document.createElement("p");
 			xReps.textContent = "Reps: ";
 			var repsIn = document.createElement("input");
-			repsIn.setAttribute("id", "reps");
+			repsIn.setAttribute("id", "updateReps");
 			repsIn.setAttribute("type", "text");
 			repsIn.setAttribute("name", "reps");
 			repsIn.setAttribute("value", response.reps);
@@ -146,23 +139,24 @@ function updateClick(clicked_id){console.log(clicked_id);
 			var xWeight = document.createElement("p");
 			xWeight.textContent = "Weight: ";
 			var weightIn = document.createElement("input");
-			weightIn.setAttribute("id", "weight");
+			weightIn.setAttribute("id", "updateWeight");
 			weightIn.setAttribute("type", "text");
 			weightIn.setAttribute("name", "weight");
 			weightIn.setAttribute("value", response.weight);
 			var lbsIn = document.createElement("input");
 			lbsIn.setAttribute("type", "radio");
-			lbsIn.setAttribute("id", "lbs");
-			lbsIn.setAttribute("name", "lbskg");
+			lbsIn.setAttribute("id", "updateLbs");
+			lbsIn.setAttribute("name", "updatelbskg");
 			lbsIn.setAttribute("value", "1");
 			var lbsText = document.createElement("span");
 			lbsText.textContent = " lbs. ";
 			var kgIn = document.createElement("input");
 			kgIn.setAttribute("type", "radio");
-			kgIn.setAttribute("id", "kg");
-			kgIn.setAttribute("name", "lbskg");
+			kgIn.setAttribute("id", "updateKg");
+			kgIn.setAttribute("name", "updatelbskg");
 			kgIn.setAttribute("value", "0");
-			kgIn.textContent = " kg. ";
+			var kgText = document.createElement("span");
+			kgText.textContent = " kg. ";
 			if(response.lbs == 1){
 				lbsIn.checked = true;
 			}
@@ -173,6 +167,7 @@ function updateClick(clicked_id){console.log(clicked_id);
 			xWeight.appendChild(lbsIn);
 			xWeight.appendChild(lbsText);
 			xWeight.appendChild(kgIn);
+			xWeight.appendChild(kgText);
 			
 			var xDate = document.createElement("p");
 			xDate.textContent = "Date Performed (month/day/year): "
@@ -181,11 +176,41 @@ function updateClick(clicked_id){console.log(clicked_id);
 			fieldset.appendChild(xName);
 			fieldset.appendChild(xReps);
 			fieldset.appendChild(xWeight);
+			
+			var submitUpdate = document.createElement("input");
+			submitUpdate.setAttribute("type", "submit");
+			submitUpdate.setAttribute("id", "updateSubmit");
+			submitUpdate.setAttribute("value", "Update Exercise");
+			
 			tmpForm.appendChild(fieldset);
+			tmpForm.appendChild(submitUpdate);
 			
 			var bod = document.getElementsByTagName("body");
 			bod = bod[0];
 			bod.appendChild(tmpForm);
+			
+			document.getElementById("updateSubmit").addEventListener("click", function(event){
+				var req = new XMLHttpRequest();
+				var updateSubmission = "http://52.33.123.28:3000/safe-update?exerciseName=";
+				var updatelbsRadio = document.getElementsByName("updatelbskg");
+				var updateweightUnit = null;
+				for(var i=0; i<updatelbsRadio.length; i++){
+					if(updatelbsRadio[i].checked)
+						updateweightUnit = updatelbsRadio[i].value;
+				req.open("GET", updateSubmission+document.getElementById("updateName").value+"&reps="+document.getElementById("updateReps").value+"&weight="+document.getElementById("updateWeight").value+"&lbs="+updateweightUnit+, true);
+					req.addEventListener("load",function(){
+						if(req.status >= 200 && req.status < 400){
+							var node = document.getElementById(clicked_id).children;
+							node[0] = updateName;
+							node[1] = updateReps;
+							node[2] = updateWeight;
+							node[3] = updateweightUnit;
+							
+							var delForm = document.getElementById("updateExercise");
+							if(delForm.parentNode){
+								node.parentNode.removeChild(node);
+							}
+						}
 			
 			//document.getElementById("wot").removeChild(clicked_id);
 		}
