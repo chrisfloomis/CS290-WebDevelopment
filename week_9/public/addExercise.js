@@ -115,9 +115,9 @@ function updateClick(clicked_id){console.log(clicked_id);
 	req.addEventListener("load",function(){
 		if(req.status >= 200 && req.status < 400){//console.log(clicked_id);
 			var response = JSON.parse(req.responseText);
-			console.log(JSON.stringify(response));
+			//console.log(JSON.stringify(response));
 			response = response[0];
-			console.log(response.name);
+			//console.log(response.name);
 			var tmpForm = document.createElement("form");
 			tmpForm.setAttribute("name","updateExercise");
 			
