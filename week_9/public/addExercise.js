@@ -168,7 +168,9 @@ function updateClick(clicked_id){console.log(clicked_id);
 			}
 			xWeight.appendChild(weightIn);
 			xWeight.appendChild(lbsIn);
+			xWeight.textContent = " lbs. ";
 			xWeight.appendChild(kgIn);
+			xWeight.textContent = " kg. ";
 			
 			var xDate = document.createElement("p");
 			xDate.textContent = "Date Performed (month/day/year): "
