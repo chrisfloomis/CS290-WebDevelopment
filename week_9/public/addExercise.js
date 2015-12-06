@@ -131,7 +131,7 @@ function updateClick(clicked_id){console.log(clicked_id);
 			nameIn.setAttribute("id", "exerciseName");
 			nameIn.setAttribute("type", "text");
 			nameIn.setAttribute("name", "exerciseName");
-			nameIn.setAttribute("value", response.name);
+			nameIn.setAttribute("value", String(response.name));
 			xName.appendChild(nameIn);
 			
 			var xReps = document.createElement("p");
