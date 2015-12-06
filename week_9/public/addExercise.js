@@ -213,7 +213,7 @@ function updateClick(clicked_id){console.log(clicked_id);
 						}
 			
 			//document.getElementById("wot").removeChild(clicked_id);
-		}
+		})
 		else{//error
 			console.log("Error in network request: " + request.statusText);
 		}
