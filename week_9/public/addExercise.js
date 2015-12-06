@@ -211,16 +211,13 @@ function updateClick(clicked_id){console.log(clicked_id);
 								node.parentNode.removeChild(node);
 							}
 						}
-			
-			//document.getElementById("wot").removeChild(clicked_id);
-		})
-		else{//error
-			console.log("Error in network request: " + request.statusText);
-		}
-	});
+						else{//error
+							console.log("Error in network request: " + request.statusText);
+						}
+					});
 	req.send(JSON.stringify(req.responseText));
 	event.preventDefault();
-}
+});
 
 function deleteClick(clicked_id){//console.log(clicked_id);
 	var req = new XMLHttpRequest();
