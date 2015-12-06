@@ -222,6 +222,9 @@ function updateClick(clicked_id){console.log(clicked_id);
 			});
 		}
 	});
+								 
+				req.send(JSON.stringify(req.responseText));
+				event.preventDefault();
 								}
 
 function deleteClick(clicked_id){//console.log(clicked_id);
