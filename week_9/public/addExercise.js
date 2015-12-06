@@ -131,16 +131,16 @@ function updateClick(clicked_id){console.log(clicked_id);
 			nameIn.setAttribute("id", "exerciseName");
 			nameIn.setAttribute("type", "text");
 			nameIn.setAttribute("name", "exerciseName");
-			nameIn.setAttribute("value", String(response.name));
+			nameIn.setAttribute("value", response.name);
 			xName.appendChild(nameIn);
 			
 			var xReps = document.createElement("p");
 			xReps.textContent = "Reps: ";
 			var repsIn = document.createElement("input");
-			nameIn.setAttribute("id", "reps");
-			nameIn.setAttribute("type", "text");
-			nameIn.setAttribute("name", "reps");
-			nameIn.setAttribute("value", response.reps);
+			repsIn.setAttribute("id", "reps");
+			repsIn.setAttribute("type", "text");
+			repsIn.setAttribute("name", "reps");
+			repsIn.setAttribute("value", response.reps);
 			xReps.appendChild(repsIn);
 			
 			/*var xWeight = document.createElement("p");
