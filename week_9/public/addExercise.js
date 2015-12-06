@@ -112,6 +112,7 @@ function updateClick(clicked_id){console.log(clicked_id);
 			response = response[0];
 			//console.log(response.name);
 			var tmpForm = document.createElement("form");
+			tmpForm.setAttribute("id","updateExercise");
 			tmpForm.setAttribute("name","updateExercise");
 			
 			var fieldset = document.createElement("fieldset");
@@ -189,7 +190,7 @@ function updateClick(clicked_id){console.log(clicked_id);
 			bod = bod[0];
 			bod.appendChild(tmpForm);
 			
-			document.getElementsByName("updateSubmit")[0].addEventListener("click", function(event){
+			document.getElementById("updateSubmit").addEventListener("click", function(event){
 				var req = new XMLHttpRequest();
 				var updateSubmission = "http://52.33.123.28:3000/safe-update?exerciseName=";
 				var updatelbsRadio = document.getElementsByName("updatelbskg");
@@ -206,10 +207,10 @@ function updateClick(clicked_id){console.log(clicked_id);
 							node[2] = updateWeight;
 							node[3] = updateweightUnit;
 							
-							//var delForm = document.getElementById("updateExercise");
-							//if(delForm.parentNode){
-								//node.parentNode.removeChild(node);
-							//}
+							var delForm = document.getElementById("updateExercise");
+							if(delForm.parentNode){
+								node.parentNode.removeChild(node);
+							}
 						}
 						else{//error
 							console.log("Error in network request: " + request.statusText);
