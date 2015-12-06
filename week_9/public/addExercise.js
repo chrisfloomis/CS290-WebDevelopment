@@ -209,7 +209,7 @@ function updateClick(clicked_id){console.log(clicked_id);
 							//var delForm = document.getElementById("updateExercise");
 							//if(delForm.parentNode){
 								//node.parentNode.removeChild(node);
-							}
+							//}
 						}
 						else{//error
 							console.log("Error in network request: " + request.statusText);
