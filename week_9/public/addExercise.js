@@ -190,7 +190,6 @@ function updateClick(clicked_id){console.log(clicked_id);
 			bod = bod[0];
 			bod.appendChild(tmpForm);
 			
-			function updateAJAX(){
 			document.getElementById("updateSubmit").addEventListener("click", function(event){
 				var req = new XMLHttpRequest();
 				var updateSubmission = "http://52.33.123.28:3000/safe-update?exerciseName=";
@@ -220,7 +219,7 @@ function updateClick(clicked_id){console.log(clicked_id);
 				}
 				req.send(JSON.stringify(req.responseText));
 				event.preventDefault();
-			});}
+			});
 			
 			updateAJAX();
 		}
