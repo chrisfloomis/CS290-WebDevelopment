@@ -131,8 +131,7 @@ app.get('/safe-update',function(req,res,next){console.log("safe update");
           next(err);
           return;
         }
-        context.results = "Updated " + result.changedRows + " rows.";
-        res.render('home',context);
+        res.send(req.query);
       });
     }
   });
