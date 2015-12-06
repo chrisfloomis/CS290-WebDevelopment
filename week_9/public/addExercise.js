@@ -130,7 +130,7 @@ function updateClick(clicked_id){console.log(clicked_id);
 			nameIn.setAttribute("type", "text");
 			nameIn.setAttribute("name", "exerciseName");
 			nameIn.setAttribute("value", response.name);
-			xName.apendChild(nameIn);
+			xName.appendChild(nameIn);
 			
 			var xReps = document.createElement("p");
 			xReps.textContent = "Reps: ";
@@ -139,7 +139,7 @@ function updateClick(clicked_id){console.log(clicked_id);
 			nameIn.setAttribute("type", "text");
 			nameIn.setAttribute("name", "reps");
 			nameIn.setAttribute("value", response.reps);
-			xReps.apendChild(repsIn);
+			xReps.appendChild(repsIn);
 			
 			/*var xWeight = document.createElement("p");
 			xWeight.textContent = "Reps: ";
