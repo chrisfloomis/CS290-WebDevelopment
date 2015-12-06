@@ -197,7 +197,7 @@ function updateClick(clicked_id){console.log(clicked_id);
 				for(var i=0; i<updatelbsRadio.length; i++){
 					if(updatelbsRadio[i].checked)
 						updateweightUnit = updatelbsRadio[i].value;
-				req.open("GET", updateSubmission+document.getElementById("updateName").value+"&reps="+document.getElementById("updateReps").value+"&weight="+document.getElementById("updateWeight").value+"&lbs="+updateweightUnit+, true);
+				req.open("GET", updateSubmission+document.getElementById("updateName").value+"&reps="+document.getElementById("updateReps").value+"&weight="+document.getElementById("updateWeight").value+"&lbs="+updateweightUnit, true);
 					req.addEventListener("load",function(){
 						if(req.status >= 200 && req.status < 400){
 							var node = document.getElementById(clicked_id).children;
