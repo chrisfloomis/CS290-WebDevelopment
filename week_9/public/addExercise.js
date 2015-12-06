@@ -161,10 +161,10 @@ function updateClick(clicked_id){console.log(clicked_id);
 			kgIn.setAttribute("name", "lbskg");
 			kgIn.setAttribute("value", "0");
 			if(response.lbs == 1){
-				lbsIn.setAttribute(,"checked");
+				lbsIn.checked = true;
 			}
 			if(response.lbs == 0){
-				kgIn.setAttribute(,"checked");
+				kgIn.checked = true;
 			}
 			xWeight.appendChild(weightIn);
 			xWeight.appendChild(lbsIn);
