@@ -206,9 +206,9 @@ function updateClick(clicked_id){console.log(clicked_id);
 							node[2] = updateWeight;
 							node[3] = updateweightUnit;
 							
-							var delForm = document.getElementById("updateExercise");
-							if(delForm.parentNode){
-								node.parentNode.removeChild(node);
+							//var delForm = document.getElementById("updateExercise");
+							//if(delForm.parentNode){
+								//node.parentNode.removeChild(node);
 							}
 						}
 						else{//error
