@@ -121,7 +121,7 @@ function updateClick(clicked_id){console.log(clicked_id);
 			
 			var xName = document.createElement("p");
 			xName.textContent = "Exercise Name: ";
-			var nameIn = document.createElement("input").required;
+			var nameIn = document.createElement("input");
 			nameIn.setAttribute("id", "updateName");
 			nameIn.setAttribute("type", "text");
 			nameIn.setAttribute("name", "exerciseName");
