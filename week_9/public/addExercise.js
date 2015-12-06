@@ -115,8 +115,46 @@ function updateClick(clicked_id){console.log(clicked_id);
 	req.addEventListener("load",function(){
 		if(req.status >= 200 && req.status < 400){//console.log(clicked_id);
 			var response = JSON.parse(req.responseText);
-			var tmpForm = document.createElement("div");
-			tmpForm.textContent = response.prefilledForm;
+			console.log(JSON.stringify(response));
+			var tmpForm = document.createElement("form");
+			tmpForm.setAttribute("name","updateExercise");
+			
+			var fieldset = document.createElement("fieldset");
+			var legend = document.createElement("legend");
+			legend.textContent = "Update Exercise";
+			
+			var xName = document.createElement("p");
+			xName.textContent = "Exercise Name: ";
+			var nameIn = document.createElement("input");
+			nameIn.setAttribute("id", "exerciseName");
+			nameIn.setAttribute("type", "text");
+			nameIn.setAttribute("name", "exerciseName");
+			nameIn.setAttribute("value", response.name);
+			xName.apendChild(nameIn);
+			
+			var xReps = document.createElement("p");
+			xReps.textContent = "Reps: ";
+			var repsIn = document.createElement("input");
+			nameIn.setAttribute("id", "reps");
+			nameIn.setAttribute("type", "text");
+			nameIn.setAttribute("name", "reps");
+			nameIn.setAttribute("value", response.reps);
+			xReps.apendChild(repsIn);
+			
+			/*var xWeight = document.createElement("p");
+			xWeight.textContent = "Reps: ";
+			var repsIn = document.createElement("input");
+			nameIn.setAttribute("id", "reps");
+			nameIn.setAttribute("type", "text");
+			nameIn.setAttribute("name", "reps");
+			nameIn.setAttribute("value", response.uReps);
+			xReps.apendChild(repsIn);*/
+			
+			fieldset.appendChild(legend);
+			fieldset.appendChild(xName);
+			fieldset.appendChild(xReps);
+			tmpForm.appendChild(fieldset);
+			
 			var bod = document.getElementsByTagName("body");
 			bod = bod[0];
 			bod.appendChild(tmpForm);

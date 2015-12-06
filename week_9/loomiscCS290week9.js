@@ -45,7 +45,7 @@ app.get('/update',function(req,res,next){
 	var day = 99;//rows.date[8]+rows.date[9];
 	var year = 99;//rows.date[0]+rows.date[1]+rows.date[2]+rows.date[3];
 		
-		var updateForm = {"prefilledForm" : '<div id="tmpform">'+
+		/*var updateForm = {"prefilledForm" : '<div id="tmpform">'+
 		'<form name="updateExercise">'+
 			'<fieldset>'+
 				'<legend>Update Exercise</legend>'+
@@ -66,8 +66,8 @@ app.get('/update',function(req,res,next){
 			'<input type="submit" id="updateExerciseSubmit" value="Add Exercise">'+
 		'</form>'+
 	'</div>';
-	
-	res.send(updateForm);	
+	*/
+	res.send(rows);	
 	
     /*context.name = rows.name;
 	context.reps = rows.reps;
