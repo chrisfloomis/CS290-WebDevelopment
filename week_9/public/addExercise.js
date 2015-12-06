@@ -221,7 +221,6 @@ function updateClick(clicked_id){console.log(clicked_id);
 				event.preventDefault();
 			});
 			
-			updateAJAX();
 		}
 	});
 								 
