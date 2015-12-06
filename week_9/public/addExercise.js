@@ -143,18 +143,40 @@ function updateClick(clicked_id){console.log(clicked_id);
 			repsIn.setAttribute("value", response.reps);
 			xReps.appendChild(repsIn);
 			
-			/*var xWeight = document.createElement("p");
-			xWeight.textContent = "Reps: ";
-			var repsIn = document.createElement("input");
-			nameIn.setAttribute("id", "reps");
-			nameIn.setAttribute("type", "text");
-			nameIn.setAttribute("name", "reps");
-			nameIn.setAttribute("value", response.uReps);
-			xReps.apendChild(repsIn);*/
+			var xWeight = document.createElement("p");
+			xWeight.textContent = "Weight: ";
+			var weightIn = document.createElement("input");
+			weightIn.setAttribute("id", "weight");
+			weightIn.setAttribute("type", "text");
+			weightIn.setAttribute("name", "weight");
+			weightIn.setAttribute("value", response.weight);
+			var lbsIn = document.createElement("input");
+			lbsIn.setAttribute("type", "radio");
+			lbsIn.setAttribute("id", "lbs");
+			lbsIn.setAttribute("name", "lbskg");
+			lbsIn.setAttribute("value", "1");
+			var kgIn = document.createElement("input");
+			kgIn.setAttribute("type", "radio");
+			kgIn.setAttribute("id", "kg");
+			kgIn.setAttribute("name", "lbskg");
+			kgIn.setAttribute("value", "0");
+			if(response.lbs == 1){
+				lbsIn.setAttribute("checked");
+			}
+			if(response.lbs == 0){
+				kgIn.setAttribute("checked");
+			}
+			xWeight.appendChild(weightIn);
+			xWeight.appendChild(lbsIn);
+			xWeight.appendChild(kgIn);
+			
+			var xDate = document.createElement("p");
+			xDate.textContent = "Date Performed (month/day/year): "
 			
 			fieldset.appendChild(legend);
 			fieldset.appendChild(xName);
 			fieldset.appendChild(xReps);
+			fieldset.appendChild(xWeight);
 			tmpForm.appendChild(fieldset);
 			
 			var bod = document.getElementsByTagName("body");
