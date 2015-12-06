@@ -117,7 +117,7 @@ function updateClick(clicked_id){console.log(clicked_id);
 			var response = JSON.parse(req.responseText);
 			console.log(JSON.stringify(response));
 			response = response[0];
-			console.log(response);
+			console.log(response.name);
 			var tmpForm = document.createElement("form");
 			tmpForm.setAttribute("name","updateExercise");
 			
