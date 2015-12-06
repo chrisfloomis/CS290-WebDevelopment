@@ -155,11 +155,13 @@ function updateClick(clicked_id){console.log(clicked_id);
 			lbsIn.setAttribute("id", "lbs");
 			lbsIn.setAttribute("name", "lbskg");
 			lbsIn.setAttribute("value", "1");
+			lbsIn.textContent = " lbs. ";
 			var kgIn = document.createElement("input");
 			kgIn.setAttribute("type", "radio");
 			kgIn.setAttribute("id", "kg");
 			kgIn.setAttribute("name", "lbskg");
 			kgIn.setAttribute("value", "0");
+			kgIn.textContent = " kg. ";
 			if(response.lbs == 1){
 				lbsIn.checked = true;
 			}
@@ -168,9 +170,7 @@ function updateClick(clicked_id){console.log(clicked_id);
 			}
 			xWeight.appendChild(weightIn);
 			xWeight.appendChild(lbsIn);
-			xWeight.textContent = " lbs. ";
 			xWeight.appendChild(kgIn);
-			xWeight.textContent = " kg. ";
 			
 			var xDate = document.createElement("p");
 			xDate.textContent = "Date Performed (month/day/year): "
