@@ -215,9 +215,13 @@ function updateClick(clicked_id){console.log(clicked_id);
 							console.log("Error in network request: " + request.statusText);
 						}
 					});
-	req.send(JSON.stringify(req.responseText));
-	event.preventDefault();
-});
+				}
+				req.send(JSON.stringify(req.responseText));
+				event.preventDefault();
+			});
+		}
+	});
+								}
 
 function deleteClick(clicked_id){//console.log(clicked_id);
 	var req = new XMLHttpRequest();
