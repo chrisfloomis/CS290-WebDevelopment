@@ -115,7 +115,7 @@ app.get('/reset-table',function(req,res,next){
   });
 });
 
-app.get('/safe-update',function(req,res,next){
+app.get('/safe-update',function(req,res,next){console.log("safe update");
   var context = {};
   mysql.pool.query("SELECT * FROM workouts WHERE id=?", [req.query.id], function(err, result){
     if(err){
