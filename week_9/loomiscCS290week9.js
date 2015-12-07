@@ -17,7 +17,7 @@ var mysql = require('./mysqlpool.js');
   database: 'student'
 });*/
 
-
+//HOME - Grabs all rows from DB and displays
 app.get('/',function(req,res,next){
 	var context = {};
 //get table	
@@ -32,6 +32,7 @@ app.get('/',function(req,res,next){
   });
 });
 
+//I was unable to get this update section working.  Left commented code to come back to.
 app.get('/update',function(req,res,next){
 	var context = {};
 //get table	
@@ -83,6 +84,7 @@ app.get('/update',function(req,res,next){
   });
 });
 
+//inserts new row and returns the results and the ID of the row added
 app.get('/insert',function(req,res,next){
 	var context = {};
 	mysql.pool.query("INSERT INTO workouts (`name`,`reps`,`weight`,`date`,`lbs`) VALUES (?,?,?,?,?)", [req.query.exerciseName, req.query.reps, req.query.weight, req.query.date, req.query.lbs], function(err, result){
@@ -115,6 +117,7 @@ app.get('/reset-table',function(req,res,next){
   });
 });
 
+//supposed to update row, but I was unable to get my update working properly
 app.get('/safe-update',function(req,res,next){console.log("safe update");
   var context = {};
   mysql.pool.query("SELECT * FROM workouts WHERE id=?", [req.query.id], function(err, result){
@@ -137,6 +140,7 @@ app.get('/safe-update',function(req,res,next){console.log("safe update");
   });
 });
 
+//deletes a row from the DB
 app.get('/delete',function(req,res,next){
 	var context = {};
 	mysql.pool.query("DELETE FROM workouts WHERE id=?",[req.query.id], function(err,result){
